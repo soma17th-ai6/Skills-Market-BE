@@ -1,13 +1,16 @@
 package com.skillsmarket.demo.controller;
 
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.notNullValue;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 import com.skillsmarket.demo.domain.SkillCategory;
 import com.skillsmarket.demo.domain.Skills;
+import com.skillsmarket.demo.dto.SimilarSkillResponses;
 import com.skillsmarket.demo.repository.SkillsRepository;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import java.util.List;
@@ -60,9 +63,9 @@ class SkillEmbeddingControllerTest {
 
         // when & then
         given()
-        .when()
+                .when()
                 .post("/skills/embed-all")
-        .then()
+                .then()
                 .statusCode(200);
     }
 
@@ -90,30 +93,31 @@ class SkillEmbeddingControllerTest {
 
         // 임베딩 먼저 수행
         given()
-        .when()
+                .when()
                 .post("/skills/embed-all")
-        .then()
+                .then()
                 .statusCode(200);
 
         // when & then
         given()
                 .queryParam("query", "Java backend framework")
                 .queryParam("topK", 3)
-        .when()
+                .when()
                 .get("/skills/recommendation")
-        .then()
+                .then()
                 .statusCode(200)
                 .body("skills", hasSize(3))
                 .body("skills[0].title", equalTo("Spring Boot REST API"))
                 .body("skills[0].id", notNullValue())
                 .body("skills[0].description", notNullValue())
-                .body("skills[0].percentage", greaterThan(0.0f));
+                .body("skills[0].percentage", greaterThan(0));
     }
 
     @Test
     void GET_recommendation_기본_topK_동작() {
         // given
-        skillsRepository.save(createTestSkill("Skill 1", "desc1", SkillCategory.SPRING_BOOT, "Java Spring Boot 백엔드 개발"));
+        skillsRepository.save(
+                createTestSkill("Skill 1", "desc1", SkillCategory.SPRING_BOOT, "Java Spring Boot 백엔드 개발"));
         skillsRepository.save(createTestSkill("Skill 2", "desc2", SkillCategory.REACT, "React 프론트엔드 개발"));
         skillsRepository.save(createTestSkill("Skill 3", "desc3", SkillCategory.DEVOPS, "DevOps CI/CD 파이프라인"));
         skillsRepository.save(createTestSkill("Skill 4", "desc4", SkillCategory.DATA, "데이터 분석 및 머신러닝"));
@@ -124,9 +128,9 @@ class SkillEmbeddingControllerTest {
         // when & then - topK 생략 시 기본값 3
         given()
                 .queryParam("query", "programming")
-        .when()
+                .when()
                 .get("/skills/recommendation")
-        .then()
+                .then()
                 .statusCode(200)
                 .body("skills", hasSize(3));
     }
@@ -134,7 +138,8 @@ class SkillEmbeddingControllerTest {
     @Test
     void GET_recommendation_커스텀_topK() {
         // given
-        skillsRepository.save(createTestSkill("Skill 1", "desc1", SkillCategory.SPRING_BOOT, "Java Spring Boot 백엔드 개발"));
+        skillsRepository.save(
+                createTestSkill("Skill 1", "desc1", SkillCategory.SPRING_BOOT, "Java Spring Boot 백엔드 개발"));
         skillsRepository.save(createTestSkill("Skill 2", "desc2", SkillCategory.REACT, "React 프론트엔드 개발"));
         skillsRepository.save(createTestSkill("Skill 3", "desc3", SkillCategory.DEVOPS, "DevOps CI/CD 파이프라인"));
 
@@ -144,9 +149,9 @@ class SkillEmbeddingControllerTest {
         given()
                 .queryParam("query", "programming")
                 .queryParam("topK", 1)
-        .when()
+                .when()
                 .get("/skills/recommendation")
-        .then()
+                .then()
                 .statusCode(200)
                 .body("skills", hasSize(1));
     }
@@ -155,9 +160,9 @@ class SkillEmbeddingControllerTest {
     void GET_recommendation_query_없으면_400() {
         // when & then
         given()
-        .when()
+                .when()
                 .get("/skills/recommendation")
-        .then()
+                .then()
                 .statusCode(400);
     }
 
@@ -185,22 +190,26 @@ class SkillEmbeddingControllerTest {
 
         // 임베딩
         given()
-        .when()
+                .when()
                 .post("/skills/embed-all")
-        .then()
+                .then()
                 .statusCode(200);
 
         // when & then - 한국어 쿼리로 검색
-        given()
+        SimilarSkillResponses responses = given()
                 .queryParam("query", "인증과 보안")
                 .queryParam("topK", 2)
-        .when()
+                .when()
                 .get("/skills/recommendation")
-        .then()
+                .then()
                 .statusCode(200)
-                .body("skills", hasSize(2))
-                .body("skills[0].title", equalTo("Spring Security OAuth2"))
-                .body("skills[0].percentage", greaterThan(0.0f));
+                .extract().as(SimilarSkillResponses.class);
+
+        assertAll(
+                () -> assertThat(responses.skills()).hasSize(2),
+                () -> assertThat(responses.skills().get(0).title()).isEqualTo("Spring Security OAuth2"),
+                () -> assertThat(responses.skills().get(0).percentage()).isGreaterThan(0)
+        );
     }
 
     private Skills createTestSkill(String title, String description, SkillCategory category, String content) {

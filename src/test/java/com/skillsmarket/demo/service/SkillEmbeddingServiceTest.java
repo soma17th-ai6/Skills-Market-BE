@@ -1,9 +1,11 @@
 package com.skillsmarket.demo.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 import com.skillsmarket.demo.domain.SkillCategory;
 import com.skillsmarket.demo.domain.Skills;
+import com.skillsmarket.demo.dto.SimilarSkillResponse;
 import com.skillsmarket.demo.dto.SimilarSkillResponses;
 import com.skillsmarket.demo.repository.SkillsRepository;
 import java.util.List;
@@ -73,8 +75,10 @@ class SkillEmbeddingServiceTest {
         List<Document> results = vectorStore.similaritySearch(
                 SearchRequest.builder().query("Spring Boot").topK(3).build()
         );
-        assertThat(results).isNotEmpty();
-        assertThat(results.get(0).getMetadata().get("title")).isEqualTo("Spring Boot REST API");
+        assertAll(
+                () -> assertThat(results).isNotEmpty(),
+                () -> assertThat(results.get(0).getMetadata().get("title")).isEqualTo("Spring Boot REST API")
+        );
     }
 
     @Test
@@ -104,8 +108,10 @@ class SkillEmbeddingServiceTest {
         SimilarSkillResponses results = skillEmbeddingService.findSimilarSkills("Java backend framework", 3);
 
         // then
-        assertThat(results.skills()).isNotEmpty();
-        assertThat(results.skills().get(0).title()).isEqualTo("Spring Boot REST API");
+        assertAll(
+                () -> assertThat(results.skills()).isNotEmpty(),
+                () -> assertThat(results.skills().get(0).title()).isEqualTo("Spring Boot REST API")
+        );
     }
 
     @Test
@@ -140,12 +146,15 @@ class SkillEmbeddingServiceTest {
         SimilarSkillResponses results = skillEmbeddingService.findSimilarSkills("Spring 보안 인증", 1);
 
         // then
-        assertThat(results.skills()).hasSize(1);
-        var response = results.skills().get(0);
-        assertThat(response.id()).isEqualTo(saved.getId());
-        assertThat(response.title()).isEqualTo("Spring Security");
-        assertThat(response.description()).isEqualTo("인증과 인가 구현");
-        assertThat(response.percentage()).isBetween(0.0, 1.0);
+        SimilarSkillResponse response = results.skills().get(0);
+
+        assertAll(
+                () -> assertThat(results.skills()).hasSize(1),
+                () -> assertThat(response.id()).isEqualTo(saved.getId()),
+                () -> assertThat(response.title()).isEqualTo("Spring Security"),
+                () -> assertThat(response.description()).isEqualTo("인증과 인가 구현"),
+                () -> assertThat(response.percentage()).isBetween(0, 100)
+        );
     }
 
     @Test

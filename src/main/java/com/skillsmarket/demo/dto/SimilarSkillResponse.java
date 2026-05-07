@@ -6,7 +6,7 @@ public record SimilarSkillResponse(
         long id,
         String title,
         String description,
-        Double percentage
+        int percentage
 ) {
 
     public SimilarSkillResponse(Document document) {
@@ -14,7 +14,11 @@ public record SimilarSkillResponse(
                 ((Number) document.getMetadata().get("skillId")).longValue(),
                 (String) document.getMetadata().get("title"),
                 (String) document.getMetadata().get("description"),
-                document.getScore()
+                toPercentage(document.getScore())
         );
+    }
+
+    private static int toPercentage(Double score) {
+        return (int) Math.round(score * 100);
     }
 }
