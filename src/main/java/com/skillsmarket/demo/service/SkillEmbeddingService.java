@@ -26,7 +26,9 @@ public class SkillEmbeddingService {
         List<String> existingIds = skills.stream()
                 .map(s -> "skill-" + s.getId())
                 .toList();
-        vectorStore.delete(existingIds);
+        if (!existingIds.isEmpty()) {
+            vectorStore.delete(existingIds);
+        }
 
         List<Document> documents = skills.stream()
                 .map(skill -> new Document(
@@ -40,7 +42,9 @@ public class SkillEmbeddingService {
                         )
                 ))
                 .toList();
-        vectorStore.add(documents);
+        if (!documents.isEmpty()) {
+            vectorStore.add(documents);
+        }
     }
 
     public SimilarSkillResponses findSimilarSkills(String query, int topK) {
