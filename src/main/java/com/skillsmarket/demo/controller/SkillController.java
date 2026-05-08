@@ -1,6 +1,7 @@
 package com.skillsmarket.demo.controller;
 
 import com.skillsmarket.demo.domain.SkillCategory;
+import com.skillsmarket.demo.dto.SkillDetailResponse;
 import com.skillsmarket.demo.dto.SkillResponses;
 import com.skillsmarket.demo.service.SkillService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -9,6 +10,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,4 +32,15 @@ public class SkillController {
         SkillResponses response = skillService.findByCategory(category);
         return ResponseEntity.ok(response);
     }
+
+    @Operation(summary = "스킬 상세 조회", description = "스킬 ID를 기준으로 스킬 상세 정보를 조회합니다.")
+    @GetMapping("/{skillId}")
+    public ResponseEntity<SkillDetailResponse> getSkillById(
+            @Parameter(description = "스킬 ID")
+            @PathVariable Long skillId
+    ) {
+        SkillDetailResponse response = skillService.findById(skillId);
+        return ResponseEntity.ok(response);
+    }
 }
+

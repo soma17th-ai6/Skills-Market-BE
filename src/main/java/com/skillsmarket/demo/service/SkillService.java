@@ -2,6 +2,7 @@ package com.skillsmarket.demo.service;
 
 import com.skillsmarket.demo.domain.SkillCategory;
 import com.skillsmarket.demo.domain.Skills;
+import com.skillsmarket.demo.dto.SkillDetailResponse;
 import com.skillsmarket.demo.dto.SkillResponse;
 import com.skillsmarket.demo.dto.SkillResponses;
 import com.skillsmarket.demo.repository.SkillsRepository;
@@ -24,5 +25,12 @@ public class SkillService {
         return skills.stream()
                 .map(SkillResponse::from)
                 .collect(Collectors.collectingAndThen(Collectors.toList(), SkillResponses::new));
+    }
+
+    public SkillDetailResponse findById(Long skillId) {
+        Skills skill = skillsRepository.findById(skillId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 스킬을 찾을 수 없습니다. id=" + skillId));
+
+        return SkillDetailResponse.from(skill);
     }
 }
