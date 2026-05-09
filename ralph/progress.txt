@@ -25,3 +25,17 @@
 - Tests: 5 tests (202 + requestId, blank 400, missing 400, PENDING status, DB persistence) - all passing
 - Build: ./gradlew build SUCCESS
 - Notes: Used MockMvc directly instead of RestAssured MockMvc due to Spring Boot 4 / Spring Framework 7 incompatibility with rest-assured 5.5.1
+
+## US-003: 비동기 처리 인프라 구성 (Spring @Async)
+- Status: DONE
+- Files created:
+  - src/main/java/com/skillsmarket/demo/config/AsyncConfig.java
+  - src/test/java/com/skillsmarket/demo/config/AsyncConfigTest.java
+- Files modified:
+  - src/main/java/com/skillsmarket/demo/domain/SkillGenerationRequest.java (added updateStatus method)
+  - src/main/java/com/skillsmarket/demo/service/SkillGenerationService.java (added @Async runPipeline method with stub pipeline steps)
+  - src/main/java/com/skillsmarket/demo/controller/SkillController.java (call runPipeline after submitGenerationRequest)
+  - build.gradle (added awaitility testImplementation dependency)
+  - ralph/prd.json (set US-003 passes to true)
+- Tests: 3 tests (ThreadPoolTaskExecutor bean validation, @Async immediate return, POST 202 + Awaitility status change) - all passing
+- Build: ./gradlew build SUCCESS

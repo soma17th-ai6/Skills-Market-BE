@@ -53,6 +53,10 @@ public class SkillGenerationRequest {
         return request;
     }
 
+    public void updateStatus(GenerationStatus status) {
+        this.status = status;
+    }
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();

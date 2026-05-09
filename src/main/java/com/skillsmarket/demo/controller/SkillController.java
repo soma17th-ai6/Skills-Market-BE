@@ -47,6 +47,7 @@ public class SkillController {
             @Valid @RequestBody SkillGenerateRequest request
     ) {
         SkillGenerateResponse response = skillGenerationService.submitGenerationRequest(request.userPrompt());
+        skillGenerationService.runPipeline(response.requestId());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(response);
     }
 

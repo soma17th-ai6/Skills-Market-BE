@@ -58,7 +58,7 @@
         "Typecheck passes"
       ],
       "priority": 3,
-      "passes": false,
+      "passes": true,
       "notes": "Spring @Async + ThreadPoolTaskExecutor 사용. Awaitility 라이브러리를 testImplementation에 추가하여 비동기 테스트 지원. 파이프라인 내부 AI 호출은 후속 스토리에서 구현하므로 이 단계에서는 stub/로깅으로 처리."
     },
     {
