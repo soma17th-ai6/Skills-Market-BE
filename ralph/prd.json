@@ -123,7 +123,7 @@
         "Typecheck passes"
       ],
       "priority": 6,
-      "passes": false,
+      "passes": true,
       "notes": "생성된 스킬은 Claude Code에서 사용 가능한 마크다운 포맷이어야 함. refine 메서드도 이 서비스에 포함 (US-007에서 호출)."
     },
     {

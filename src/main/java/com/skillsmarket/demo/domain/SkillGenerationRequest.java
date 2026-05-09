@@ -61,6 +61,18 @@ public class SkillGenerationRequest {
         this.clarifiedRequirements = clarifiedRequirements;
     }
 
+    public void updateGeneratedSkillContent(String generatedSkillContent) {
+        this.generatedSkillContent = generatedSkillContent;
+    }
+
+    public void updateReviewFeedback(String reviewFeedback) {
+        this.reviewFeedback = reviewFeedback;
+    }
+
+    public void updateFinalSkillContent(String finalSkillContent) {
+        this.finalSkillContent = finalSkillContent;
+    }
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();

@@ -71,3 +71,16 @@
   - ralph/prd.json (set US-005 passes to true)
 - Tests: 1 unit test (mock ChatClient, status 전환 및 저장 확인) + 3 integration tests (@EnabledIfEnvironmentVariable, skipped without API key) - all passing
 - Build: ./gradlew build SUCCESS
+
+## US-006: Step 2a: 스킬 생성 에이전트 서비스
+- Status: DONE
+- Files created:
+  - src/main/java/com/skillsmarket/demo/service/SkillCreatorAgentService.java (ChatClient를 사용한 스킬 생성 및 refine 서비스)
+  - src/test/java/com/skillsmarket/demo/service/SkillCreatorAgentServiceTest.java (ChatClient mock 단위 테스트 - generate, refine)
+  - src/test/java/com/skillsmarket/demo/service/SkillCreatorAgentServiceIntegrationTest.java (OpenAI 의존 통합 테스트, @EnabledIfEnvironmentVariable)
+- Files modified:
+  - src/main/java/com/skillsmarket/demo/domain/SkillGenerationRequest.java (updateGeneratedSkillContent, updateReviewFeedback, updateFinalSkillContent 메서드 추가)
+  - src/main/java/com/skillsmarket/demo/service/SkillGenerationService.java (SkillCreatorAgentService 주입, GENERATING 단계 stub을 실제 generate() 호출로 교체)
+  - ralph/prd.json (set US-006 passes to true)
+- Tests: 2 unit tests (generate 로직 검증 + refine 로직 검증) + 3 integration tests (@EnabledIfEnvironmentVariable, skipped without API key) - all passing
+- Build: ./gradlew build SUCCESS
