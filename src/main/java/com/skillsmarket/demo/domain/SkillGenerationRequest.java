@@ -46,6 +46,13 @@ public class SkillGenerationRequest {
 
     private LocalDateTime updatedAt;
 
+    public static SkillGenerationRequest create(String userPrompt) {
+        SkillGenerationRequest request = new SkillGenerationRequest();
+        request.userPrompt = userPrompt;
+        request.status = GenerationStatus.PENDING;
+        return request;
+    }
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();

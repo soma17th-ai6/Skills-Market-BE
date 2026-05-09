@@ -39,7 +39,7 @@
         "Typecheck passes"
       ],
       "priority": 2,
-      "passes": false,
+      "passes": true,
       "notes": "비동기 처리는 다음 스토리에서 구현. 이 스토리는 요청 접수만 담당. 컨트롤러 테스트는 기존 SkillEmbeddingControllerTest 패턴 따를 것."
     },
     {

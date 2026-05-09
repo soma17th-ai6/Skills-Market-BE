@@ -10,3 +10,18 @@
   - src/test/java/com/skillsmarket/demo/repository/SkillGenerationRequestRepositoryTest.java
 - Tests: 4 tests (모든 필드 persist, status 전환, null validation, blank validation) - all passing
 - Build: ./gradlew build SUCCESS
+
+## US-002: 스킬 생성 요청 제출 API 엔드포인트
+- Status: DONE
+- Files created:
+  - src/main/java/com/skillsmarket/demo/dto/SkillGenerateRequest.java
+  - src/main/java/com/skillsmarket/demo/dto/SkillGenerateResponse.java
+  - src/main/java/com/skillsmarket/demo/service/SkillGenerationService.java
+  - src/test/java/com/skillsmarket/demo/controller/SkillGenerationControllerTest.java
+- Files modified:
+  - src/main/java/com/skillsmarket/demo/domain/SkillGenerationRequest.java (added static factory method)
+  - src/main/java/com/skillsmarket/demo/controller/SkillController.java (added POST /skills/generate endpoint)
+  - src/test/resources/application-test.yaml (added default for OPENAI_API_KEY)
+- Tests: 5 tests (202 + requestId, blank 400, missing 400, PENDING status, DB persistence) - all passing
+- Build: ./gradlew build SUCCESS
+- Notes: Used MockMvc directly instead of RestAssured MockMvc due to Spring Boot 4 / Spring Framework 7 incompatibility with rest-assured 5.5.1
