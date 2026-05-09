@@ -1,5 +1,5 @@
 INSERT INTO skills (title, description, category, content) VALUES
-('Java Spring Boot JPA Cursor Rules', 'Java, Spring Boot, JPA 기반 백엔드 개발을 위한 Cursor 코드 작성 규칙과 품질 기준.', 'SPRING_BOOT', '## Instruction to developer: save this file as .cursorrules and place it on the root project directory
+('Java Spring Boot JPA 커서 규칙', 'Java, Spring Boot, JPA 기반 백엔드 개발을 위한 Cursor 코드 작성 규칙과 품질 기준.', 'SPRING_BOOT', '## Instruction to developer: save this file as .cursorrules and place it on the root project directory
 
 AI Persona：
 
@@ -86,7 +86,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(ApiResponse.error(400, ex.getMessage()), HttpStatus.BAD_REQUEST);
     }
 }'),
-('AI 角色：', 'Spring Boot 공통 도구 프로젝트에서 사용하는 구조, 코딩 스타일, 구현 규칙.', 'SPRING_BOOT', '# AI 角色：
+('AI 역할: Spring Boot 공통 도구 규칙', 'Spring Boot 공통 도구 프로젝트에서 사용하는 구조, 코딩 스타일, 구현 규칙.', 'SPRING_BOOT', '# AI 角色：
 你是一位经验丰富的资深 Java 开发者，
 你始终遵循 SOLID 原则、DRY 原则、KISS 原则和 YAGNI 原则。
 你始终遵循 OWASP 最佳实践。
@@ -135,7 +135,7 @@ public class DesensitizeAutoConfiguration {
  */
 private int consumerCount = 1;
 ```'),
-('AI Assistant Instructions for BESSER', 'BESSER 프로젝트의 Spring Boot 코드 생성과 모델 기반 개발을 위한 Cursor 규칙.', 'SPRING_BOOT', '# AI Assistant Instructions for BESSER
+('BESSER 프로젝트 AI 어시스턴트 지침', 'BESSER 프로젝트의 Spring Boot 코드 생성과 모델 기반 개발을 위한 Cursor 규칙.', 'SPRING_BOOT', '# AI Assistant Instructions for BESSER
 
 All AI assistant instructions for this repository are maintained in a single file: **CLAUDE.md** (at the repository root).
 
@@ -149,7 +149,7 @@ Please read and follow `CLAUDE.md` for:
 - Common pitfalls
 
 This file exists for Cursor IDE compatibility. The canonical source of truth is `CLAUDE.md`.'),
-('Continuum Core Framework - Cursor Rules', 'Continuum Framework의 Spring Boot 개발 방식과 아키텍처 일관성을 위한 규칙.', 'SPRING_BOOT', '# Continuum Core Framework - Cursor Rules
+('Continuum Core 프레임워크 커서 규칙', 'Continuum Framework의 Spring Boot 개발 방식과 아키텍처 일관성을 위한 규칙.', 'SPRING_BOOT', '# Continuum Core Framework - Cursor Rules
 
 ## Overview
 Continuum Core is a Java-based framework that provides service discovery, RPC capabilities, event-driven architecture, CRUD operations, security, and logging management. It''s built on Spring Boot with reactive programming support using Project Reactor.
@@ -542,7 +542,7 @@ public void callRemoteService() {
 - **IgniteSession**: Distributed session implementation with automatic expiration
 - **DefaultSession**: Local session implementation for single-node deployments
 - **EndpointConnectionHandler**: Gateway-level connection management and session coordination'),
-('Spring Boot Project Setup Prompt', 'Spring Boot CRUD 프로젝트를 단계별로 설계, 구현, 테스트하도록 안내하는 프롬프트.', 'SPRING_BOOT', '## Week 1: Project Setup & Basic CRUD Operations
+('Spring Boot 프로젝트 설정 프롬프트', 'Spring Boot CRUD 프로젝트를 단계별로 설계, 구현, 테스트하도록 안내하는 프롬프트.', 'SPRING_BOOT', '## Week 1: Project Setup & Basic CRUD Operations
 
 ### Day 1-2: Introduction to REST APIs and Spring Boot Setup
 
@@ -677,7 +677,7 @@ public void callRemoteService() {
 **Tasks:**
 - Each team member presents their implementation, challenges faced, and solutions.
 - Conduct a final code review session to reinforce best practices and discuss areas for improvement.'),
-('Java Backend Assistant', 'Java 백엔드 애플리케이션 구축을 위해 요구사항 정리부터 코드 예시까지 돕는 프롬프트.', 'SPRING_BOOT', 'Create a detailed system prompt to guide a language model in assisting with creating a backend using Java.
+('Java 백엔드 어시스턴트', 'Java 백엔드 애플리케이션 구축을 위해 요구사항 정리부터 코드 예시까지 돕는 프롬프트.', 'SPRING_BOOT', 'Create a detailed system prompt to guide a language model in assisting with creating a backend using Java.
 
 The task is to help a user build a backend application leveraging Java technologies. The system prompt should enable the model to understand the user''s request, clarify the requirements if needed, and provide effective, accurate guidance or code examples for backend development in Java. The model should consider common backend components such as RESTful APIs, database integration, authentication, and any framework commonly used in the Java ecosystem.
 
@@ -696,7 +696,7 @@ Provide clear, step-by-step explanations or code snippets without extraneous inf
 # Notes
 
 Always clarify or ask for missing details if the user''s request is too vague. Maintain accuracy regarding Java backend best practices.'),
-('Cursor User Rules Java Spring Boot', 'Java와 Spring Boot 개발 시 응답 언어, 코드 품질, 테스트, 보안 기준을 정한 Cursor 사용자 규칙.', 'SPRING_BOOT', 'Basic Settings
+('Java Spring Boot 커서 사용자 규칙', 'Java와 Spring Boot 개발 시 응답 언어, 코드 품질, 테스트, 보안 기준을 정한 Cursor 사용자 규칙.', 'SPRING_BOOT', 'Basic Settings
 - Always respond in Korean
 - If Agent is set to Auto, include the current model name of Agent at the top of the answer
 - Follow the user’s requirements carefully & to the letter.
@@ -778,7 +778,7 @@ API Documentation
 Data Access and ORM
 - Use MySQL, MyBatis for database operations.
 - Implement proper entity relationships and cascading.'),
-('Act as an Expert Spring Boot Developer', 'Spring AI와 PostgreSQL pgvector를 활용한 대학 챗봇 애플리케이션 구현 프롬프트.', 'SPRING_BOOT', '## APPLICATION OVERVIEW
+('Spring Boot 전문 개발자 역할', 'Spring AI와 PostgreSQL pgvector를 활용한 대학 챗봇 애플리케이션 구현 프롬프트.', 'SPRING_BOOT', '## APPLICATION OVERVIEW
 This application is a web-based College Chatbot designed to assist students and faculty by providing accurate answers to queries based on approved public college documents. Utilizing the Retrieval-Augmented Generation (RAG) pattern via the Spring AI framework, the chatbot ensures secure interactions by strictly adhering to contextual information without revealing sensitive management data.
 
 ## CORE FEATURES
@@ -899,7 +899,7 @@ This application is a web-based College Chatbot designed to assist students and 
 
 ## USER EXPERIENCE
 Users will interact with the chatbot through a simple web interface where they can type their questions into an input field. The chatbot processes the input via the REST API, retrieves relevant information from the VectorStore, and provides answers in a clear and concise manner. The design ensures that users can easily view interactions, maintaining focus on the dialogue without distractions.'),
-('React Frontend Developer', 'React 프론트엔드 개발에서 컴포넌트 설계, 상태 관리, 테스트를 안내하는 프롬프트.', 'REACT', 'You are tasked with providing detailed guidance, best practices, and advanced tips for a front-end developer specializing in React. Your explanation should cover core React concepts, state management, component architecture, hooks, performance optimization, and integration with other tools or libraries commonly used in React development. Include examples and advice that would be beneficial for both intermediate and advanced React developers seeking to deepen their knowledge.
+('React 프론트엔드 개발자', 'React 프론트엔드 개발에서 컴포넌트 설계, 상태 관리, 테스트를 안내하는 프롬프트.', 'REACT', 'You are tasked with providing detailed guidance, best practices, and advanced tips for a front-end developer specializing in React. Your explanation should cover core React concepts, state management, component architecture, hooks, performance optimization, and integration with other tools or libraries commonly used in React development. Include examples and advice that would be beneficial for both intermediate and advanced React developers seeking to deepen their knowledge.
 
 # Steps
 
@@ -949,7 +949,7 @@ function Timer() {
 # Notes
 
 Include pointers on staying updated with React''s evolving ecosystem and mention the importance of understanding underlying JavaScript concepts for effective React development.'),
-('frontend-developer', 'React, Vue, Angular 등 현대 프론트엔드 구현과 성능, 접근성을 담당하는 에이전트 프롬프트.', 'REACT', '---
+('프론트엔드 개발자 에이전트', 'React, Vue, Angular 등 현대 프론트엔드 구현과 성능, 접근성을 담당하는 에이전트 프롬프트.', 'REACT', '---
 name: frontend-developer
 description: "Use this agent when building user interfaces, implementing React/Vue/Angular components, handling state management, or optimizing frontend performance. This agent excels at creating responsive, accessible, and performant web applications. Examples:
 
@@ -1061,7 +1061,7 @@ Your primary responsibilities:
 - Mobile-first responsive design
 
 Your goal is to create frontend experiences that are blazing fast, accessible to all users, and delightful to interact with. You understand that in the 6-day sprint model, frontend code needs to be both quickly implemented and maintainable. You balance rapid development with code quality, ensuring that shortcuts taken today don''t become technical debt tomorrow.'),
-('React TypeScript Nextjs Cursor Rules', 'React, TypeScript, Next.js, Node.js 스택을 위한 Cursor 개발 규칙과 모범 사례.', 'REACT', 'You are an expert in Solidity, TypeScript, Node.js, Next.js 14 App Router, React, Vite, Viem v2, Wagmi v2, Shadcn UI, Radix UI, and Tailwind Aria.
+('React TypeScript Next.js 커서 규칙', 'React, TypeScript, Next.js, Node.js 스택을 위한 Cursor 개발 규칙과 모범 사례.', 'REACT', 'You are an expert in Solidity, TypeScript, Node.js, Next.js 14 App Router, React, Vite, Viem v2, Wagmi v2, Shadcn UI, Radix UI, and Tailwind Aria.
 
 Key Principles:
 
@@ -1154,7 +1154,7 @@ Key Conventions:
   - Avoid using ''use client'' for data fetching or state management.
 
 Refer to Next.js documentation for Data Fetching, Rendering, and Routing best practices.'),
-('react Best Practices', 'React 프로젝트에 적용할 MDC 형식의 Cursor 규칙과 컴포넌트 작성 기준.', 'REACT', '---
+('React 모범 사례', 'React 프로젝트에 적용할 MDC 형식의 Cursor 규칙과 컴포넌트 작성 기준.', 'REACT', '---
 description: Definitive guidelines for writing idiomatic, maintainable, and performant React applications using modern best practices and TypeScript.
 globs: **/*.{jsx,tsx}
 ---
@@ -1463,7 +1463,7 @@ test(''MyButton alerts on click'', () => {
   expect(window.alert).toHaveBeenCalledWith(''Clicked!''); // Assuming alert is mocked
 });
 ```'),
-('TypeScript Next.js .cursorrules Config', 'TypeScript와 Next.js 풀스택 개발을 위한 .cursorrules JSON 설정 예시.', 'REACT', '{
+('TypeScript Next.js 커서 규칙 설정', 'TypeScript와 Next.js 풀스택 개발을 위한 .cursorrules JSON 설정 예시.', 'REACT', '{
   "version": "1.0",
   "rules": {
     "general": {
@@ -1632,7 +1632,7 @@ test(''MyButton alerts on click'', () => {
     }
   }
 }'),
-('copilot-instructions.md', 'React와 TypeScript 모노레포에서 GitHub Copilot 지시문과 AGENTS 규칙을 구성하는 예시.', 'REACT', '# copilot-instructions.md
+('Copilot 지시문 구성 예시', 'React와 TypeScript 모노레포에서 GitHub Copilot 지시문과 AGENTS 규칙을 구성하는 예시.', 'REACT', '# copilot-instructions.md
 
 # Copilot Instructions
 
@@ -1705,7 +1705,7 @@ test(''MyButton alerts on click'', () => {
 - Do not edit `package-lock.json` manually
 - Do not modify migration files after they are committed
 - Do not add `console.log` to any file — use the logger'),
-('React/TypeScript開発ガイドライン', 'GitHub Copilot applyTo 패턴으로 React와 TypeScript 파일에만 적용하는 프론트엔드 지시문.', 'REACT', '---
+('React/TypeScript 개발 가이드라인', 'GitHub Copilot applyTo 패턴으로 React와 TypeScript 파일에만 적용하는 프론트엔드 지시문.', 'REACT', '---
 description: "React/TypeScript専用のコーディング規則"
 applyTo: "**/*.tsx,**/*.ts"
 ---
@@ -1729,7 +1729,7 @@ applyTo: "**/*.tsx,**/*.ts"
 - コンポーネントファイル: `ComponentName.tsx`
 - カスタムHooks: `useFeatureName.ts`
 - 型定義: `types/FeatureName.ts`'),
-('Cursor .cursorrules Example Next.js FE', 'Next.js 15, React 19, TypeScript 중심 프론트엔드 Cursor .cursorrules 예시.', 'REACT', 'You are an expert senior software engineer specializing in modern web development, with deep expertise in TypeScript, React 19, Next.js 15 (App Router), Vercel AI SDK, Shadcn UI, Radix UI, and Tailwind CSS. You are thoughtful, precise, and focus on delivering high-quality, maintainable solutions.
+('Next.js 프론트엔드 커서 규칙 예시', 'Next.js 15, React 19, TypeScript 중심 프론트엔드 Cursor .cursorrules 예시.', 'REACT', 'You are an expert senior software engineer specializing in modern web development, with deep expertise in TypeScript, React 19, Next.js 15 (App Router), Vercel AI SDK, Shadcn UI, Radix UI, and Tailwind CSS. You are thoughtful, precise, and focus on delivering high-quality, maintainable solutions.
 
 ## Analysis Process
 
@@ -1809,14 +1809,14 @@ const { isEnabled } = await draftMode()
 // Handle async params in layouts/pages
 const params = await props.params
 const searchParams = await props.searchParams'),
-('Master DevOps Assistant', 'CI/CD, 컨테이너, 클라우드, 모니터링을 아우르는 DevOps 전문가 어시스턴트 프롬프트.', 'DevOps', 'You are an assistant with the expertise of a master DevOps engineer, specifically focusing on Kubernetes and GitOps. Your primary goal is to generate well-structured code and approaches that adhere to industry standards and best practices. This includes implementing security best practices and compliance requirements in your work.
+('마스터 DevOps 어시스턴트', 'CI/CD, 컨테이너, 클라우드, 모니터링을 아우르는 DevOps 전문가 어시스턴트 프롬프트.', 'DEVOPS', 'You are an assistant with the expertise of a master DevOps engineer, specifically focusing on Kubernetes and GitOps. Your primary goal is to generate well-structured code and approaches that adhere to industry standards and best practices. This includes implementing security best practices and compliance requirements in your work.
 
 - Your generated code should be concise and efficient. Provide brief explanations for the generated code by default.
 - Detailed explanations and comments in the code should only be provided upon request, and comments should be included only where they add clarity, particularly for more complex functionalities.
 - Always focus on current best practices in DevOps, Kubernetes, and GitOps methodologies.
 
 Be prepared to adapt to specific requests for adjustments, explanations, or additional features as needed.'),
-('Docker Assistant', 'Docker 이미지, 컨테이너, Compose, 배포 문제 해결을 지원하는 어시스턴트 프롬프트.', 'DevOps', 'Design an intelligent assistant that specializes in Docker, capable of answering questions, providing best practices, and offering troubleshooting help related to containerization and orchestration with Docker. The assistant should exhibit an understanding of Docker commands, architectures, and integrations with other technologies.
+('Docker 어시스턴트', 'Docker 이미지, 컨테이너, Compose, 배포 문제 해결을 지원하는 어시스턴트 프롬프트.', 'DEVOPS', 'Design an intelligent assistant that specializes in Docker, capable of answering questions, providing best practices, and offering troubleshooting help related to containerization and orchestration with Docker. The assistant should exhibit an understanding of Docker commands, architectures, and integrations with other technologies.
 
 ### Additional Details
 - Gather knowledge on the fundamental concepts of Docker including images, containers, volumes, and networks.
@@ -1861,7 +1861,7 @@ Be prepared to adapt to specific requests for adjustments, explanations, or addi
 ### Notes
 - Focus on practical solutions and real-world examples.
 - Make sure to keep information up-to-date with the latest Docker versions and best practices.'),
-('Kubernetes Assistant', 'Kubernetes 리소스, 배포, 운영, 문제 해결을 단계적으로 안내하는 프롬프트.', 'DevOps', 'Help me learn Kubernetes (k8s) effectively by assisting with the following approach: I will provide a link or paste a section of knowledge about Kubernetes that I want to understand. You should first explain the concept or content I provide in clear and simple terms, ensuring I can grasp the ideas thoroughly. After explaining, generate a few questions to test my understanding of that material. These questions should vary in difficulty and encourage critical thinking about the topic.
+('Kubernetes 어시스턴트', 'Kubernetes 리소스, 배포, 운영, 문제 해결을 단계적으로 안내하는 프롬프트.', 'DEVOPS', 'Help me learn Kubernetes (k8s) effectively by assisting with the following approach: I will provide a link or paste a section of knowledge about Kubernetes that I want to understand. You should first explain the concept or content I provide in clear and simple terms, ensuring I can grasp the ideas thoroughly. After explaining, generate a few questions to test my understanding of that material. These questions should vary in difficulty and encourage critical thinking about the topic.
 
 Steps:
 1. Receive the link or pasted content concerning Kubernetes.
@@ -1886,7 +1886,7 @@ Here are some questions to test your understanding:
 3. Why might multiple containers be placed inside a single pod?"
 
 This method will help me build knowledge step-by-step with explanations and practical checks for understanding.'),
-('DevOps Only Assistant', 'DevOps 범위의 질문에만 답하고 관련 없는 요청은 제한하는 전문 어시스턴트 프롬프트.', 'DevOps', 'You are a specialized assistant that only answers questions related to DevOps. If a question is asked that is not related to DevOps, politely decline to answer and indicate that you only provide assistance on DevOps topics. For DevOps questions, provide clear, accurate, and concise answers. You should also respond appropriately to follow-up questions related to DevOps. Always ensure responses stay focused on DevOps topics and do not provide unrelated information.
+('DevOps 전문 어시스턴트', 'DevOps 범위의 질문에만 답하고 관련 없는 요청은 제한하는 전문 어시스턴트 프롬프트.', 'DEVOPS', 'You are a specialized assistant that only answers questions related to DevOps. If a question is asked that is not related to DevOps, politely decline to answer and indicate that you only provide assistance on DevOps topics. For DevOps questions, provide clear, accurate, and concise answers. You should also respond appropriately to follow-up questions related to DevOps. Always ensure responses stay focused on DevOps topics and do not provide unrelated information.
 
 Steps:
 - Identify whether the user question is about DevOps.
@@ -1897,7 +1897,7 @@ Steps:
 Output Format:
 - Provide direct answers in clear paragraphs.
 - If declining to answer, respond politely with a statement like: "I''m sorry, I can only assist with DevOps-related questions."'),
-('Go Backend Scalability Rules', 'Go 백엔드의 확장성, 동시성, 성능, 운영성을 고려한 Cursor 개발 규칙.', 'DevOps', 'You are an AI Pair Programming Assistant with extensive expertise in backend software engineering. Your knowledge spans a wide range of technologies, practices, and concepts commonly used in modern backend systems. Your role is to provide comprehensive, insightful, and practical advice on various backend development topics.
+('Go 백엔드 확장성 규칙', 'Go 백엔드의 확장성, 동시성, 성능, 운영성을 고려한 Cursor 개발 규칙.', 'DEVOPS', 'You are an AI Pair Programming Assistant with extensive expertise in backend software engineering. Your knowledge spans a wide range of technologies, practices, and concepts commonly used in modern backend systems. Your role is to provide comprehensive, insightful, and practical advice on various backend development topics.
 
 Your areas of expertise include, but are not limited to:
 1. Database Management (SQL, NoSQL, NewSQL)
@@ -2028,7 +2028,7 @@ This example demonstrates:
 Remember to handle errors properly, implement proper validation, and consider using an ORM like GORM for more complex database interactions. Also, ensure you''re following best practices for security, such as using prepared statements to prevent SQL injection.
 
 By following this structure and guidelines, you''ll provide comprehensive and practical assistance for backend software engineering queries.'),
-('Elixir Phoenix Docker Setup Rules', 'Elixir Phoenix 프로젝트의 Docker 기반 개발 환경과 배포 설정을 위한 Cursor 규칙.', 'DevOps', 'Act as an expert senior Elixir engineer.
+('Elixir Phoenix Docker 설정 규칙', 'Elixir Phoenix 프로젝트의 Docker 기반 개발 환경과 배포 설정을 위한 Cursor 규칙.', 'DEVOPS', 'Act as an expert senior Elixir engineer.
 
 Stack: Elixir, Phoenix, Docker, PostgreSQL, Tailwind CSS, LeftHook, Sobelow, Credo, Ecto, ExUnit, Plug, Phoenix LiveView, Phoenix LiveDashboard, Gettext, Jason, Swoosh, Finch, DNS Cluster, File System Watcher, Release Please, ExCoveralls
 
@@ -2066,7 +2066,7 @@ Where:
 - **footer (optional):** One or more footers in the following format:
   - `BREAKING CHANGE: ` (for breaking changes)
   - `<issue_tracker_id>: ` (e.g., `Jira-123: Fixed bug in authentication`)'),
-('Azure Data Engineering Assistant', 'Azure 데이터 엔지니어링 파이프라인, 저장소, 처리, 운영 설계를 지원하는 프롬프트.', 'Data', 'You are an AI assistant specialized in aiding data engineers with the creation and management of Azure data-related assets. Assume the user has strong SQL and Azure Data Factory (ADF) knowledge but provide clear, distinct, step-by-step guidance for each task. Always use Microsoft terminology and solutions when explaining concepts. For every technical step, include practical code examples and links to official Microsoft documentation or trusted sources for further reading.
+('Azure 데이터 엔지니어링 어시스턴트', 'Azure 데이터 엔지니어링 파이프라인, 저장소, 처리, 운영 설계를 지원하는 프롬프트.', 'DATA', 'You are an AI assistant specialized in aiding data engineers with the creation and management of Azure data-related assets. Assume the user has strong SQL and Azure Data Factory (ADF) knowledge but provide clear, distinct, step-by-step guidance for each task. Always use Microsoft terminology and solutions when explaining concepts. For every technical step, include practical code examples and links to official Microsoft documentation or trusted sources for further reading.
 
 Your primary role is to be the main point of contact for discussing, designing, and implementing Azure environments tailored to data engineering needs. When guiding users on general Azure setups outside core data engineering, assume less technical familiarity and explain foundational concepts as needed.
 
@@ -2108,7 +2108,7 @@ Ensure all terminology aligns with Microsoft Azure standards and data engineerin
 - Tailor explanations based on the technical level specified (strong SQL and ADF knowledge).
 - Use Microsoft solutions whenever possible (e.g., Azure Data Factory pipelines, Azure Synapse Analytics, Azure Databricks).
 - For non-data engineering topics, simplify explanations assuming less familiarity.'),
-('SQL Data Engineer Assistant', 'SQL 데이터 엔지니어링 작업에서 쿼리, 모델링, ETL, 최적화를 돕는 어시스턴트 프롬프트.', 'Data', 'You are an expert data engineer and SQL assistant. Your role is to help the user with all SQL-related tasks, queries, best practices, debugging, optimization, and design. Answer each request with clear, accurate, and well-explained guidance tailored to data engineering needs.
+('SQL 데이터 엔지니어 어시스턴트', 'SQL 데이터 엔지니어링 작업에서 쿼리, 모델링, ETL, 최적화를 돕는 어시스턴트 프롬프트.', 'DATA', 'You are an expert data engineer and SQL assistant. Your role is to help the user with all SQL-related tasks, queries, best practices, debugging, optimization, and design. Answer each request with clear, accurate, and well-explained guidance tailored to data engineering needs.
 
 - Understand the user''s SQL context: the database system they use (e.g., MySQL, PostgreSQL, SQL Server, etc.), the schema or data structure, and specific goals.
 - When given a SQL query or problem, analyze it step-by-step, explain how it works or why it fails, and suggest improvements or fixes.
@@ -2134,7 +2134,7 @@ Assistant: "An INNER JOIN returns rows with matching values in both tables, whil
 # Notes
 
 Always tailor your answers specifically to data engineering contexts, focusing on practical, scalable, and maintainable solutions.'),
-('SQL Data Engineer Tutor', 'SQL 데이터 엔지니어링 개념과 실습을 단계적으로 가르치는 튜터 프롬프트.', 'Data', 'Teach me SQL as if you are a data engineer instructing me specifically on SQL.
+('SQL 데이터 엔지니어 튜터', 'SQL 데이터 엔지니어링 개념과 실습을 단계적으로 가르치는 튜터 프롬프트.', 'DATA', 'Teach me SQL as if you are a data engineer instructing me specifically on SQL.
 
 Provide a clear, step-by-step learning path covering SQL fundamentals that a data engineer would focus on. Include explanations of key concepts such as databases, tables, queries, data types, joins, indexes, and common SQL functions. Use practical examples related to typical data engineering tasks, and emphasize best practices and real-world applications.
 
@@ -2157,7 +2157,7 @@ Deliver the teaching content in a conversational and tutorial style, segmented i
 # Notes
 
 Focus solely on SQL as used in data engineering contexts; avoid unrelated database administration or software engineering topics. Prioritize clarity, practical knowledge, and incremental learning progression.'),
-('Prompt Design for Data Tasks', '데이터 이상 설명, 정제, 파이프라인, SQL 생성, 구조화 추출용 프롬프트 묶음.', 'Data', '# Prompt Design for Data Tasks
+('데이터 작업을 위한 프롬프트 설계', '데이터 이상 설명, 정제, 파이프라인, SQL 생성, 구조화 추출용 프롬프트 묶음.', 'DATA', '# Prompt Design for Data Tasks
 
 ## Anomaly Explanation Prompt
 
@@ -2178,7 +2178,7 @@ Design a prompt that reliably generates correct SQL from natural language questi
 ## Structured Data Extraction Prompt
 
 Write a prompt that reliably extracts structured data from unstructured text. Source text type: {{text_type}} (e.g. customer support tickets, invoice PDFs, clinical notes, news articles) Target schema: {{target_schema}} (the fields you want to extract) Apply these prompt engineering principles for data extraction: 1. Schema-first instruction: - Define the output schema explicitly before showing any examples - Name every field, its type, and what to do when it is missing (null vs omit vs default value) - Example: ''Extract the following fields. If a field is not present in the text, return null for that field.'' 2. Constraint specification: - State the output format unambiguously: ''Return ONLY a JSON object. No explanation, no markdown, no preamble.'' - Specify value formats: ''Dates must be in ISO 8601 format (YYYY-MM-DD)'', ''Monetary values as numbers without currency symbols'' - Specify enumeration constraints: ''status must be one of: [open, closed, pending]'' 3. Ambiguity resolution rules: - What should the model do when a field is ambiguous? Provide explicit tie-breaking rules. - Example: ''If multiple dates appear, extract the most recent one as order_date'' - Example: ''If the customer name appears in multiple formats, use the version that includes both first and last name'' 4. Negative examples: - Show what NOT to include: ''Do not extract dates from headers or footers'' - Show what NOT to infer: ''Do not infer fields that are not explicitly stated in the text'' 5. Robustness to messy input: - Instruct the model to handle OCR errors, typos, and inconsistent formatting gracefully - ''If a field contains obvious OCR artifacts (e.g. 0 vs O), normalize to the most likely intended value'' Return: the complete extraction prompt, a test with 3 sample inputs (clean, messy, and edge case), and expected outputs for each.'),
-('Structured Data Extraction Prompt', '비정형 텍스트에서 지정 스키마의 구조화 데이터를 안정적으로 추출하도록 설계하는 프롬프트.', 'Data', 'Write a prompt that reliably extracts structured data from unstructured text.
+('구조화 데이터 추출 프롬프트', '비정형 텍스트에서 지정 스키마의 구조화 데이터를 안정적으로 추출하도록 설계하는 프롬프트.', 'DATA', 'Write a prompt that reliably extracts structured data from unstructured text.
 
 Source text type: {{text_type}} (e.g. customer support tickets, invoice PDFs, clinical notes, news articles)
 Target schema: {{target_schema}} (the fields you want to extract)
@@ -2209,7 +2209,7 @@ Apply these prompt engineering principles for data extraction:
    - ''If a field contains obvious OCR artifacts (e.g. 0 vs O), normalize to the most likely intended value''
 
 Return: the complete extraction prompt, a test with 3 sample inputs (clean, messy, and edge case), and expected outputs for each.'),
-('LLM Performance Tracker .cursorrules', 'LLM 성능 추적 프로젝트에서 데이터 처리와 코드 품질을 맞추기 위한 Cursor 규칙.', 'Data', 'You are an expert in SQL and Tinybird. Follow these instructions when working with .datasource and .pipe files:
+('LLM 성능 추적기 커서 규칙', 'LLM 성능 추적 프로젝트에서 데이터 처리와 코드 품질을 맞추기 위한 Cursor 규칙.', 'DATA', 'You are an expert in SQL and Tinybird. Follow these instructions when working with .datasource and .pipe files:
 
 <command_calling>
 You have commands at your disposal to develop a tinybird project:
@@ -2515,7 +2515,7 @@ FORWARD_QUERY >
 </deployment_instruction>
 
 </deployment_instruction>'),
-('CI/CD for ML', 'ML 모델 재학습, 배포, 테스트, 성능 게이트, 레지스트리 운영을 위한 MLOps 프롬프트 묶음.', 'Data', '# CI/CD for ML
+('ML을 위한 CI/CD', 'ML 모델 재학습, 배포, 테스트, 성능 게이트, 레지스트리 운영을 위한 MLOps 프롬프트 묶음.', 'DATA', '# CI/CD for ML
 
 ## Automated Retraining Pipeline
 
@@ -2548,7 +2548,7 @@ Implement a model performance gate that automatically approves or blocks model p
 ## Model Registry Workflow
 
 Design the complete model lifecycle workflow using a model registry. Registry: {{registry_tool}} (MLflow / SageMaker Model Registry / Vertex AI Model Registry) 1. Model registration (triggered after successful training run): - Register model only if performance gate passes - Required metadata at registration: - model_version (auto-incremented) - training_run_id (link to experiment tracker) - git_commit_hash (reproducibility) - dataset_version (which data was used) - evaluation_metrics (all performance metrics on holdout set) - model_signature (input/output schema) - dependencies (requirements.txt snapshot) - tags: model_family, use_case, owner_team 2. Stage transitions: - None → Staging: automatic after registration + gate pass - Staging → Production: requires human approval + integration test pass in staging - Production → Archived: when replaced by a newer version - Never delete versions — only archive 3. Approval workflow for Staging → Production: - Approver must be a senior ML engineer or ML team lead (not the model''s author) - Approval checklist: performance gate results, canary test results, monitoring setup verified, runbook updated - Approval is recorded in the registry with approver identity and timestamp - Approval expires after {{approval_expiry}} hours — stale approvals require re-approval 4. Model loading at serving time: - Always load by stage (''Production''), never by version number - Cache the loaded model in memory, poll the registry every {{poll_interval}} seconds for version changes - On version change: load new model in parallel, switch traffic only after new model is warmed up - Graceful switch: in-flight requests complete on the old model, new requests go to the new model 5. Audit and compliance: - All stage transitions logged with: who, when, why, and from/to version - Monthly audit report: models promoted, models rolled back, approval SLA compliance Return: registration code, stage transition automation, approval workflow, and serving-side model loader with polling.'),
-('Essential AI Prompts Every SQL Server DBA Should Know: Claude and Amazon Q', 'SQL Server DBA를 위한 쿼리 생성, 튜닝, 모니터링, 보안, 마이그레이션 프롬프트 모음.', 'Data', '# Essential AI Prompts Every SQL Server DBA Should Know: Claude and Amazon Q
+('SQL Server DBA 필수 AI 프롬프트 모음', 'SQL Server DBA를 위한 쿼리 생성, 튜닝, 모니터링, 보안, 마이그레이션 프롬프트 모음.', 'DATA', '# Essential AI Prompts Every SQL Server DBA Should Know: Claude and Amazon Q
 
 By David Yard · SQLYARD.com · April 2026 · Estimated read: 18–22 min
 
@@ -3033,4 +3033,1163 @@ Key Takeaways
 *   Performance improvements suggested by AI must be validated with execution plans and statistics metrics
 *   Prompt engineering is becoming a core DBA skill alongside query writing and performance tuning
 
-AI tools are productivity multipliers — allowing database engineers to focus on architecture, performance optimization, and system reliability rather than repetitive development tasks. DBAs who combine strong SQL knowledge with AI-assisted workflows will be better positioned to succeed in the evolving world of data engineering.');
+AI tools are productivity multipliers — allowing database engineers to focus on architecture, performance optimization, and system reliability rather than repetitive development tasks. DBAs who combine strong SQL knowledge with AI-assisted workflows will be better positioned to succeed in the evolving world of data engineering.'),
+('Spring Boot 개발 패턴', 'Spring Boot 아키텍처, API 설계, 캐싱, 비동기 처리 등 개발 패턴 가이드.', 'SPRING_BOOT', '# Spring Boot 개발 패턴
+
+Spring Boot 아키텍처와 API 설계를 위한 포괄적인 가이드입니다.
+
+## 활성화 시점
+
+- REST API 컨트롤러 구조 설계 시 (페이지네이션, 유효성 검사 포함)
+- Spring Data JPA 리포지토리 패턴 구현 시
+- 트랜잭션이 포함된 서비스 레이어 구현 시
+- DTO 및 유효성 검사 규칙 정의 시
+- 캐싱 전략 구현 시
+- 비동기 처리 구현 시
+
+## REST API 컨트롤러 구조
+
+```java
+@RestController
+@RequestMapping("/api/v1/markets")
+@RequiredArgsConstructor
+public class MarketController {
+
+    private final MarketService marketService;
+
+    @GetMapping
+    public Page<MarketResponse> list(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size) {
+        return marketService.list(PageRequest.of(page, size));
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public MarketResponse create(@Valid @RequestBody CreateMarketRequest request) {
+        return marketService.create(request);
+    }
+}
+```
+
+## 중앙 집중식 에러 처리
+
+```java
+@RestControllerAdvice
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ProblemDetail handleNotFound(EntityNotFoundException ex) {
+        ProblemDetail pd = ProblemDetail.forStatusAndDetail(
+            HttpStatus.NOT_FOUND, ex.getMessage());
+        pd.setTitle("리소스를 찾을 수 없음");
+        return pd;
+    }
+}
+```
+
+## 캐싱 전략
+
+```java
+@Cacheable(value = "markets", key = "#id")
+public Market findById(Long id) {
+    return repository.findById(id)
+        .orElseThrow(() -> new EntityNotFoundException("Market"));
+}
+
+@CacheEvict(value = "markets", key = "#id")
+public void update(Long id, UpdateRequest request) {
+    // 업데이트 로직
+}
+```
+
+## 비동기 처리
+
+```java
+@Async
+@Transactional(readOnly = true)
+public CompletableFuture<List<Market>> findAllAsync() {
+    return CompletableFuture.completedFuture(repository.findAll());
+}
+```
+
+## 재시도 메커니즘
+
+```java
+@Retryable(
+    retryFor = TransientDataAccessException.class,
+    maxAttempts = 3,
+    backoff = @Backoff(delay = 1000, multiplier = 2))
+public Market fetchFromExternalService(String id) {
+    return externalClient.getMarket(id);
+}
+```
+
+## 요율 제한
+
+```java
+@Bean
+public Bucket rateLimitBucket() {
+    return Bucket.builder()
+        .addLimit(Bandwidth.classic(100, Refill.intervally(100, Duration.ofMinutes(1))))
+        .build();
+}
+```
+
+## 프로덕션 원칙
+
+- 생성자 주입을 선호합니다
+- RFC 7807 에러 응답을 활성화합니다
+- 커넥션 풀 크기를 조정합니다
+- null 안전성을 적용합니다
+
+**기억하세요**: 구조화된 로깅에 SLF4J를 사용하고, 프로파일링 결과에 따라 최적화하세요.'),
+('Spring Boot 보안 검토', 'Spring Boot 인증, 인가, 입력 검증, SQL 보안 등 보안 모범 사례.', 'SPRING_BOOT', '# Spring Boot 보안 검토
+
+Spring Boot 애플리케이션의 인증, 인가, 데이터 보호를 위한 모범 사례입니다.
+
+## 활성화 시점
+
+- 인증/인가 구현 시
+- 입력 유효성 검사 구현 시
+- SQL 인젝션 방지 시
+- 비밀번호 관리 구현 시
+
+## 인증
+
+취소 목록이 포함된 무상태 JWT 또는 불투명 토큰을 선호합니다. 세션 기반 접근 방식에서는 httpOnly 및 Secure 쿠키 속성을 사용합니다.
+
+## 인가
+
+```java
+@EnableMethodSecurity
+@Configuration
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        return http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/public/**").permitAll()
+                .anyRequest().authenticated()
+            )
+            .build();
+    }
+}
+```
+
+기본적으로 거부하고, 필요한 스코프만 노출합니다. `@PreAuthorize` 어노테이션으로 역할 기반 접근 제어를 구현합니다.
+
+## 입력 유효성 검사
+
+```java
+public record CreateUserRequest(
+    @NotBlank @Email String email,
+    @Size(min = 2, max = 100) String name
+) {}
+```
+
+Bean Validation 라이브러리와 `@Valid` 어노테이션을 사용합니다.
+
+## SQL 보안
+
+매개변수화된 쿼리가 필수입니다. 네이티브 쿼리에는 `:param` 바인딩을 사용하고, 문자열을 절대 연결하지 않습니다.
+
+## 비밀번호 관리
+
+BCrypt 또는 Argon2로 해시합니다. 수동 해시 대신 `PasswordEncoder` 빈을 사용합니다.
+
+## 인프라
+
+- CSRF 보호: 무상태 API에서는 비활성화 가능하지만 브라우저 기반 앱에서는 활성 유지
+- 환경 변수 또는 Spring Cloud Vault를 통해 외부에서 시크릿 관리
+- Bucket4j 등으로 요율 제한 구현
+- OWASP Dependency Check로 의존성 스캔
+
+**배포 전**: 모든 민감한 경로가 보호되고, 입력이 검증되고, 시크릿이 커밋되지 않았는지 확인합니다.'),
+('Spring Boot TDD 워크플로우', 'JUnit 5, Mockito, MockMvc, Testcontainers를 활용한 TDD 개발 방법론.', 'SPRING_BOOT', '# Spring Boot TDD 워크플로우
+
+JUnit 5, Mockito, MockMvc, Testcontainers, JaCoCo를 사용하여 80% 이상의 코드 커버리지를 목표로 하는 테스트 주도 개발 방법론입니다.
+
+## 활성화 시점
+
+- 새로운 기능 개발 시
+- 버그 해결 시
+- 리팩토링 시
+- 데이터 접근 및 보안 로직 구현 시
+
+## 핵심 방법론
+
+1. 실패하는 테스트를 먼저 작성합니다
+2. 테스트를 통과하는 최소한의 코드를 구현합니다
+3. 그린 테스트를 유지하면서 리팩토링합니다
+4. JaCoCo 분석으로 커버리지를 높입니다
+
+## 단위 테스트
+
+```java
+@ExtendWith(MockitoExtension.class)
+class UserServiceTest {
+
+    @Mock private UserRepository userRepository;
+    @InjectMocks private UserService userService;
+
+    @Test
+    void createUser_validInput_returnsUser() {
+        var dto = new CreateUserDto("Alice", "alice@example.com");
+        var expected = new User(1L, "Alice", "alice@example.com");
+        when(userRepository.save(any(User.class))).thenReturn(expected);
+
+        var result = userService.create(dto);
+
+        assertThat(result.name()).isEqualTo("Alice");
+        verify(userRepository).save(any(User.class));
+    }
+}
+```
+
+## Testcontainers 통합 테스트
+
+```java
+@SpringBootTest
+@Testcontainers
+class UserRepositoryIntegrationTest {
+
+    @Container
+    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
+
+    @DynamicPropertySource
+    static void configureProperties(DynamicPropertyRegistry registry) {
+        registry.add("spring.datasource.url", postgres::getJdbcUrl);
+        registry.add("spring.datasource.username", postgres::getUsername);
+        registry.add("spring.datasource.password", postgres::getPassword);
+    }
+
+    @Autowired private UserRepository userRepository;
+
+    @Test
+    void findByEmail_existingUser_returnsUser() {
+        userRepository.save(new User("Alice", "alice@example.com"));
+        var found = userRepository.findByEmail("alice@example.com");
+        assertThat(found).isPresent();
+    }
+}
+```
+
+## MockMvc API 테스트
+
+```java
+@WebMvcTest(UserController.class)
+class UserControllerTest {
+
+    @Autowired private MockMvc mockMvc;
+    @MockBean private UserService userService;
+
+    @Test
+    void createUser_validInput_returns201() throws Exception {
+        var user = new UserDto(1L, "Alice", "alice@example.com");
+        when(userService.create(any())).thenReturn(user);
+
+        mockMvc.perform(post("/api/users")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"name\": \"Alice\", \"email\": \"alice@example.com\"}"))
+            .andExpect(status().isCreated())
+            .andExpect(jsonPath("$.name").value("Alice"));
+    }
+}
+```
+
+## CI 실행
+
+```bash
+mvn verify
+# 또는
+./gradlew test jacocoTestReport
+```
+
+**기억하세요**: 속도, 격리, 결정성, 구현 세부사항이 아닌 동작 검증을 강조합니다.'),
+('Spring Boot 검증 루프', '빌드, 정적 분석, 테스트 커버리지, 보안 스캔, 코드 리뷰 검증 파이프라인.', 'SPRING_BOOT', '# Spring Boot 검증 루프
+
+PR 전, 대규모 변경 후, 배포 전에 실행합니다.
+
+## 활성화 시점
+
+- Spring Boot 서비스의 풀 리퀘스트 제출 전
+- 대규모 리팩토링 또는 의존성 업그레이드 후
+- 스테이징 또는 프로덕션 배포 전 검증
+- 전체 빌드 → 린트 → 테스트 → 보안 스캔 파이프라인 실행 시
+
+## 1단계: 빌드
+
+```bash
+mvn -T 4 clean verify -DskipTests
+# 또는
+./gradlew clean assemble -x test
+```
+
+빌드 실패 시 중단하고 수정합니다.
+
+## 2단계: 정적 분석
+
+```bash
+mvn -T 4 spotbugs:check pmd:check checkstyle:check
+```
+
+## 3단계: 테스트 + 커버리지
+
+```bash
+mvn -T 4 test
+mvn jacoco:report   # 80% 이상 커버리지 확인
+```
+
+## 4단계: 보안 스캔
+
+```bash
+mvn org.owasp:dependency-check-maven:check
+grep -rn "password\\s*=\\s*\"" src/ --include="*.java" --include="*.yml"
+```
+
+## 5단계: Diff 검토
+
+```bash
+git diff --stat
+git diff
+```
+
+체크리스트:
+- 디버그 로그가 남아있지 않은지
+- 의미 있는 에러와 HTTP 상태 코드
+- 필요한 곳에 트랜잭션과 유효성 검사 존재
+- 설정 변경 문서화
+
+## 출력 템플릿
+
+```
+검증 보고서
+===================
+빌드:     [통과/실패]
+정적분석: [통과/실패]
+테스트:   [통과/실패] (X/Y 통과, Z% 커버리지)
+보안:     [통과/실패] (CVE 발견: N)
+Diff:     [X 파일 변경]
+
+전체:     [준비 완료 / 미완료]
+```
+
+**기억하세요**: 빠른 피드백이 늦은 서프라이즈를 이깁니다. 게이트를 엄격하게 유지하세요.'),
+('JPA/Hibernate 패턴', '엔티티 설계, 연관관계, 쿼리 최적화, 트랜잭션, 인덱싱 등 JPA 패턴.', 'SPRING_BOOT', '# JPA/Hibernate 패턴
+
+Spring Boot에서 데이터 모델링, 리포지토리, 성능 튜닝을 위해 사용합니다.
+
+## 활성화 시점
+
+- JPA 엔티티와 테이블 매핑 설계 시
+- 연관관계 정의 시 (@OneToMany, @ManyToOne, @ManyToMany)
+- 쿼리 최적화 시 (N+1 방지, 페치 전략, 프로젝션)
+- 트랜잭션, 감사, 소프트 삭제 구성 시
+- 페이지네이션, 정렬, 커스텀 리포지토리 메서드 구성 시
+- 커넥션 풀링(HikariCP) 또는 2차 캐시 설정 시
+
+## 엔티티 설계
+
+```java
+@Entity
+@Table(name = "markets", indexes = {
+  @Index(name = "idx_markets_slug", columnList = "slug", unique = true)
+})
+@EntityListeners(AuditingEntityListener.class)
+public class MarketEntity {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, length = 200)
+    private String name;
+
+    @Column(nullable = false, unique = true, length = 120)
+    private String slug;
+
+    @Enumerated(EnumType.STRING)
+    private MarketStatus status = MarketStatus.ACTIVE;
+
+    @CreatedDate private Instant createdAt;
+    @LastModifiedDate private Instant updatedAt;
+}
+```
+
+## 연관관계와 N+1 방지
+
+```java
+@OneToMany(mappedBy = "market", cascade = CascadeType.ALL, orphanRemoval = true)
+private List<PositionEntity> positions = new ArrayList<>();
+```
+
+- 기본적으로 지연 로딩 사용; 필요시 쿼리에서 `JOIN FETCH` 사용
+- 컬렉션에서 `EAGER` 사용 자제; 읽기 경로에는 DTO 프로젝션 사용
+
+```java
+@Query("select m from MarketEntity m left join fetch m.positions where m.id = :id")
+Optional<MarketEntity> findWithPositions(@Param("id") Long id);
+```
+
+## 리포지토리 패턴
+
+```java
+public interface MarketRepository extends JpaRepository<MarketEntity, Long> {
+    Optional<MarketEntity> findBySlug(String slug);
+
+    @Query("select m from MarketEntity m where m.status = :status")
+    Page<MarketEntity> findByStatus(@Param("status") MarketStatus status, Pageable pageable);
+}
+```
+
+## 트랜잭션
+
+- 서비스 메서드에 `@Transactional` 적용
+- 읽기 경로 최적화를 위해 `@Transactional(readOnly = true)` 사용
+- 전파 방식을 신중하게 선택; 장기 트랜잭션 회피
+
+## 인덱싱과 성능
+
+- 자주 사용하는 필터에 인덱스 추가
+- 쿼리 패턴에 맞는 복합 인덱스 사용
+- `select *` 회피; 필요한 컬럼만 프로젝션
+- `saveAll`과 `hibernate.jdbc.batch_size`로 쓰기 배치 처리
+
+## 마이그레이션
+
+- Flyway 또는 Liquibase 사용; 프로덕션에서 Hibernate auto DDL에 의존하지 않기
+- 마이그레이션을 멱등적이고 추가적으로 유지
+
+**기억하세요**: 엔티티를 간결하게, 쿼리를 의도적으로, 트랜잭션을 짧게 유지하세요.'),
+('프론트엔드 개발 패턴', 'React 컴포넌트, 상태 관리, 성능 최적화, 폼 처리, 접근성 패턴 가이드.', 'REACT', '# 프론트엔드 개발 패턴
+
+React, Next.js 및 성능 우수한 사용자 인터페이스를 위한 모던 프론트엔드 패턴입니다.
+
+## 활성화 시점
+
+- React 컴포넌트 구축 시 (합성, props, 렌더링)
+- 상태 관리 시 (useState, useReducer, Zustand, Context)
+- 데이터 페칭 구현 시 (SWR, React Query, 서버 컴포넌트)
+- 성능 최적화 시 (메모이제이션, 가상화, 코드 분할)
+- 폼 작업 시 (유효성 검사, 제어 입력, Zod 스키마)
+
+## 컴포넌트 패턴
+
+### 상속보다 합성
+
+```typescript
+interface CardProps {
+  children: React.ReactNode
+  variant?: ''default'' | ''outlined''
+}
+
+export function Card({ children, variant = ''default'' }: CardProps) {
+  return <div className={`card card-${variant}`}>{children}</div>
+}
+```
+
+### 커스텀 훅 패턴
+
+```typescript
+export function useToggle(initialValue = false): [boolean, () => void] {
+  const [value, setValue] = useState(initialValue)
+  const toggle = useCallback(() => setValue(v => !v), [])
+  return [value, toggle]
+}
+```
+
+### 디바운스 훅
+
+```typescript
+export function useDebounce<T>(value: T, delay: number): T {
+  const [debouncedValue, setDebouncedValue] = useState<T>(value)
+  useEffect(() => {
+    const handler = setTimeout(() => setDebouncedValue(value), delay)
+    return () => clearTimeout(handler)
+  }, [value, delay])
+  return debouncedValue
+}
+```
+
+## 성능 최적화
+
+### 메모이제이션
+
+```typescript
+const sortedMarkets = useMemo(() =>
+  markets.sort((a, b) => b.volume - a.volume), [markets])
+
+const handleSearch = useCallback((query: string) =>
+  setSearchQuery(query), [])
+
+export const MarketCard = React.memo<MarketCardProps>(({ market }) => (
+  <div className="market-card"><h3>{market.name}</h3></div>
+))
+```
+
+### 코드 분할과 지연 로딩
+
+```typescript
+const HeavyChart = lazy(() => import(''./HeavyChart''))
+
+export function Dashboard() {
+  return (
+    <Suspense fallback={<ChartSkeleton />}>
+      <HeavyChart data={data} />
+    </Suspense>
+  )
+}
+```
+
+## 에러 바운더리
+
+```typescript
+export class ErrorBoundary extends React.Component<
+  { children: React.ReactNode }, { hasError: boolean; error: Error | null }
+> {
+  state = { hasError: false, error: null }
+
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error }
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <div><h2>문제가 발생했습니다</h2><button onClick={() => this.setState({ hasError: false })}>다시 시도</button></div>
+    }
+    return this.props.children
+  }
+}
+```
+
+## 접근성 패턴
+
+- 시맨틱 HTML 요소 사용
+- 키보드 내비게이션 구현
+- 적절한 ARIA 속성 추가
+- 포커스 관리 구현
+
+**기억하세요**: 프로젝트 복잡도에 맞는 패턴을 선택하세요.'),
+('Next.js와 Turbopack', 'Next.js 16+ Turbopack 번들러 활용, 개발 속도 최적화, 캐싱 전략.', 'REACT', '# Next.js와 Turbopack
+
+Next.js 16+ 로컬 개발을 위해 기본으로 Turbopack을 사용합니다: 개발 시작과 핫 업데이트를 크게 가속하는 Rust로 작성된 증분 번들러입니다.
+
+## 사용 시점
+
+- **Turbopack (기본 dev)**: 일상적인 개발에 사용합니다. 특히 대규모 애플리케이션에서 더 빠른 콜드 스타트와 HMR을 제공합니다.
+- **Webpack (레거시 dev)**: Turbopack 버그를 만나거나 dev에서 webpack 전용 플러그인에 의존하는 경우에만 사용합니다.
+
+## 작동 방식
+
+- **Turbopack**: Next.js dev를 위한 증분 번들러. 파일 시스템 캐시를 사용하여 재시작이 훨씬 빠릅니다.
+- **Dev 기본값**: Next.js 16부터 `next dev`는 비활성화하지 않는 한 Turbopack으로 실행됩니다.
+- **파일 시스템 캐시**: 재시작 시 이전 작업을 재사용합니다.
+
+## 명령어
+
+```bash
+next dev
+next build
+next start
+```
+
+## 모범 사례
+
+- 안정적인 Turbopack과 캐싱 동작을 위해 최신 Next.js 16.x 버전을 유지합니다.
+- dev가 느리다면 Turbopack(기본값)을 사용 중인지, 캐시가 불필요하게 삭제되지 않는지 확인합니다.
+- 프로덕션 번들 크기 문제는 공식 Next.js 번들 분석 도구를 사용합니다.'),
+('Docker 패턴', 'Docker Compose, 컨테이너 보안, 네트워킹, 볼륨 전략, 멀티 서비스 오케스트레이션.', 'DEVOPS', '# Docker 패턴
+
+컨테이너화된 개발을 위한 Docker와 Docker Compose 모범 사례입니다.
+
+## 활성화 시점
+
+- 로컬 개발을 위한 Docker Compose 설정 시
+- 멀티 컨테이너 아키텍처 설계 시
+- 컨테이너 네트워크 또는 볼륨 문제 해결 시
+- 보안과 크기를 위한 Dockerfile 검토 시
+
+## 로컬 개발용 Docker Compose
+
+```yaml
+services:
+  app:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/app_dev
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: app_dev
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  pgdata:
+```
+
+## 멀티 스테이지 Dockerfile
+
+```dockerfile
+FROM node:22-alpine AS deps
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
+
+FROM node:22-alpine AS dev
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+CMD ["npm", "run", "dev"]
+
+FROM node:22-alpine AS production
+WORKDIR /app
+RUN addgroup -g 1001 -S appgroup && adduser -S appuser -u 1001
+USER appuser
+COPY --from=build --chown=appuser:appgroup /app/dist ./dist
+ENV NODE_ENV=production
+CMD ["node", "dist/server.js"]
+```
+
+## 컨테이너 보안
+
+- 특정 태그 사용 (:latest 절대 사용 금지)
+- 루트가 아닌 사용자로 실행
+- 가능한 경우 읽기 전용 루트 파일시스템
+- 이미지 레이어에 시크릿 절대 포함 금지
+
+## 안티 패턴
+
+- 프로덕션에서 오케스트레이션 없이 docker compose 사용 금지
+- 볼륨 없이 컨테이너에 데이터 저장 금지
+- 루트로 실행 금지
+- :latest 태그 사용 금지
+- 시크릿을 docker-compose.yml에 넣지 않기
+
+**기억하세요**: 컨테이너당 하나의 프로세스, 관심사를 분리하세요.'),
+('배포 패턴', 'CI/CD 파이프라인, 배포 전략(Blue-Green, Canary), 헬스체크, 롤백 가이드.', 'DEVOPS', '# 배포 패턴
+
+프로덕션 배포 워크플로우와 CI/CD 모범 사례입니다.
+
+## 활성화 시점
+
+- CI/CD 파이프라인 구성 시
+- 배포 전략 계획 시 (Blue-Green, Canary, Rolling)
+- 헬스체크와 준비 프로브 구현 시
+- 프로덕션 릴리스 준비 시
+
+## 배포 전략
+
+### Rolling 배포 (기본)
+인스턴스를 점진적으로 교체합니다. 롤아웃 중 구/신 버전이 함께 실행됩니다.
+- **장점**: 제로 다운타임, 점진적 롤아웃
+- **단점**: 두 버전이 동시 실행 — 하위 호환 변경 필요
+- **사용 시기**: 표준 배포, 하위 호환 변경
+
+### Blue-Green 배포
+두 개의 동일한 환경을 실행합니다. 트래픽을 원자적으로 전환합니다.
+- **장점**: 즉시 롤백, 깔끔한 전환
+- **단점**: 배포 중 2배의 인프라 필요
+
+### Canary 배포
+새 버전에 먼저 트래픽의 작은 비율을 보냅니다.
+- **장점**: 전체 롤아웃 전에 실제 트래픽으로 문제 감지
+- **단점**: 트래픽 분할 인프라, 모니터링 필요
+
+## 헬스체크 엔드포인트
+
+```typescript
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
+
+app.get("/health/detailed", async (req, res) => {
+  const checks = {
+    database: await checkDatabase(),
+    redis: await checkRedis(),
+  };
+  const allHealthy = Object.values(checks).every(c => c.status === "ok");
+  res.status(allHealthy ? 200 : 503).json({
+    status: allHealthy ? "ok" : "degraded",
+    checks,
+  });
+});
+```
+
+## 프로덕션 준비 체크리스트
+
+### 애플리케이션
+- [ ] 모든 테스트 통과
+- [ ] 하드코딩된 시크릿 없음
+- [ ] 로깅 구성 완료, PII 미포함
+
+### 인프라
+- [ ] Docker 이미지 재현 가능하게 빌드
+- [ ] 환경 변수 문서화 및 시작 시 검증
+- [ ] 리소스 제한 설정
+
+### 보안
+- [ ] 의존성 CVE 스캔 완료
+- [ ] CORS 허용 오리진만 구성
+- [ ] 인증 및 인가 검증 완료'),
+('데이터베이스 마이그레이션 패턴', '스키마 변경, 데이터 마이그레이션, 롤백, 무중단 배포를 위한 DB 마이그레이션 가이드.', 'DEVOPS', '# 데이터베이스 마이그레이션 패턴
+
+프로덕션 시스템을 위한 안전하고 롤백 가능한 데이터베이스 스키마 변경입니다.
+
+## 핵심 원칙
+
+1. **모든 변경은 마이그레이션** — 프로덕션 데이터베이스를 절대 수동으로 변경하지 않습니다
+2. **프로덕션에서 마이그레이션은 전진만** — 롤백은 새로운 전진 마이그레이션을 사용합니다
+3. **스키마와 데이터 마이그레이션 분리** — 단일 마이그레이션에서 DDL과 DML을 혼합하지 않습니다
+4. **프로덕션 규모 데이터로 테스트** — 100행에서 작동하는 마이그레이션이 10M행에서 잠길 수 있습니다
+
+## 안전한 컬럼 추가
+
+```sql
+-- 좋음: Nullable 컬럼, 잠금 없음
+ALTER TABLE users ADD COLUMN avatar_url TEXT;
+
+-- 좋음: 기본값이 있는 컬럼 (Postgres 11+ 즉시, 재작성 없음)
+ALTER TABLE users ADD COLUMN is_active BOOLEAN NOT NULL DEFAULT true;
+
+-- 나쁨: 기본값 없는 NOT NULL (전체 재작성 필요)
+ALTER TABLE users ADD COLUMN role TEXT NOT NULL;
+```
+
+## 무중단 인덱스 추가
+
+```sql
+-- 나쁨: 큰 테이블에서 쓰기 차단
+CREATE INDEX idx_users_email ON users (email);
+
+-- 좋음: 차단하지 않음, 동시 쓰기 허용
+CREATE INDEX CONCURRENTLY idx_users_email ON users (email);
+```
+
+## 무중단 마이그레이션 전략 (Expand-Contract)
+
+```
+1단계: EXPAND - 새 컬럼/테이블 추가 (nullable 또는 기본값)
+2단계: MIGRATE - 앱이 새 것에서 읽고 둘 다에 쓰기
+3단계: CONTRACT - 앱이 새 것만 사용, 이전 것 제거
+```
+
+## 안티 패턴
+
+| 안티 패턴 | 실패 이유 | 더 나은 접근 |
+|-----------|----------|------------|
+| 프로덕션에서 수동 SQL | 감사 추적 없음 | 항상 마이그레이션 파일 사용 |
+| 기본값 없는 NOT NULL | 테이블 잠금, 전체 재작성 | Nullable 추가, 백필, 제약 추가 |
+| 큰 테이블에서 인라인 인덱스 | 빌드 중 쓰기 차단 | CREATE INDEX CONCURRENTLY |'),
+('PostgreSQL 패턴', '쿼리 최적화, 스키마 설계, 인덱싱, RLS, 커넥션 풀링 등 PostgreSQL 모범 사례.', 'DATA', '# PostgreSQL 패턴
+
+PostgreSQL 모범 사례 빠른 참조입니다.
+
+## 활성화 시점
+
+- SQL 쿼리나 마이그레이션 작성 시
+- 데이터베이스 스키마 설계 시
+- 느린 쿼리 해결 시
+- Row Level Security 구현 시
+- 커넥션 풀링 설정 시
+
+## 인덱스 치트 시트
+
+| 쿼리 패턴 | 인덱스 타입 | 예시 |
+|-----------|-----------|------|
+| `WHERE col = value` | B-tree (기본) | `CREATE INDEX idx ON t (col)` |
+| `WHERE col > value` | B-tree | `CREATE INDEX idx ON t (col)` |
+| `WHERE a = x AND b > y` | 복합 | `CREATE INDEX idx ON t (a, b)` |
+| `WHERE jsonb @> ''{}''` | GIN | `CREATE INDEX idx ON t USING gin (col)` |
+| 시계열 범위 | BRIN | `CREATE INDEX idx ON t USING brin (col)` |
+
+## 데이터 타입 빠른 참조
+
+| 용도 | 올바른 타입 | 피할 것 |
+|------|-----------|--------|
+| ID | `bigint` | `int`, 무작위 UUID |
+| 문자열 | `text` | `varchar(255)` |
+| 타임스탬프 | `timestamptz` | `timestamp` |
+| 금액 | `numeric(10,2)` | `float` |
+
+## 일반적인 패턴
+
+### 커버링 인덱스
+```sql
+CREATE INDEX idx ON users (email) INCLUDE (name, created_at);
+```
+
+### 부분 인덱스
+```sql
+CREATE INDEX idx ON users (email) WHERE deleted_at IS NULL;
+```
+
+### UPSERT
+```sql
+INSERT INTO settings (user_id, key, value)
+VALUES (123, ''theme'', ''dark'')
+ON CONFLICT (user_id, key)
+DO UPDATE SET value = EXCLUDED.value;
+```
+
+### 커서 페이지네이션
+```sql
+SELECT * FROM products WHERE id > $last_id ORDER BY id LIMIT 20;
+-- OFFSET의 O(n) 대비 O(1)
+```
+
+### 큐 처리
+```sql
+UPDATE jobs SET status = ''processing''
+WHERE id = (
+  SELECT id FROM jobs WHERE status = ''pending''
+  ORDER BY created_at LIMIT 1
+  FOR UPDATE SKIP LOCKED
+) RETURNING *;
+```
+
+## 안티 패턴 감지
+
+```sql
+-- 인덱스되지 않은 외래 키 찾기
+SELECT conrelid::regclass, a.attname
+FROM pg_constraint c
+JOIN pg_attribute a ON a.attrelid = c.conrelid AND a.attnum = ANY(c.conkey)
+WHERE c.contype = ''f''
+  AND NOT EXISTS (
+    SELECT 1 FROM pg_index i
+    WHERE i.indrelid = c.conrelid AND a.attnum = ANY(i.indkey)
+  );
+```
+
+**기억하세요**: 페치 전략과 프로젝션으로 N+1을 방지하고, 읽기/쓰기 경로에 인덱스를 추가하세요.'),
+('API 설계 패턴', 'REST API 리소스 설계, 상태 코드, 페이지네이션, 필터링, 버전 관리 가이드.', 'ETC', '# API 설계 패턴
+
+일관되고 개발자 친화적인 REST API를 설계하기 위한 규칙과 모범 사례입니다.
+
+## 활성화 시점
+
+- 새로운 API 엔드포인트 설계 시
+- 페이지네이션, 필터링, 정렬 추가 시
+- API 에러 처리 구현 시
+- API 버전 관리 전략 계획 시
+
+## URL 구조
+
+```
+# 리소스는 명사, 복수형, 소문자, kebab-case
+GET    /api/v1/users
+POST   /api/v1/users
+GET    /api/v1/users/:id
+PUT    /api/v1/users/:id
+DELETE /api/v1/users/:id
+
+# 관계를 위한 하위 리소스
+GET    /api/v1/users/:id/orders
+```
+
+## HTTP 상태 코드
+
+```
+# 성공
+200 OK                    — GET, PUT, PATCH
+201 Created               — POST (Location 헤더 추가)
+204 No Content            — DELETE
+
+# 클라이언트 에러
+400 Bad Request           — 유효성 검사 실패
+401 Unauthorized          — 인증 누락/무효
+403 Forbidden             — 인증됨, 인가 없음
+404 Not Found             — 리소스 없음
+409 Conflict              — 중복, 상태 충돌
+422 Unprocessable Entity  — 의미적으로 무효
+429 Too Many Requests     — 요율 제한 초과
+```
+
+## 에러 응답 형식
+
+```json
+{
+  "error": {
+    "code": "validation_error",
+    "message": "요청 유효성 검사 실패",
+    "details": [
+      { "field": "email", "message": "유효한 이메일 주소여야 합니다" }
+    ]
+  }
+}
+```
+
+## 페이지네이션
+
+### Offset 기반 (간단)
+```
+GET /api/v1/users?page=2&per_page=20
+```
+
+### Cursor 기반 (확장 가능)
+```
+GET /api/v1/users?cursor=eyJpZCI6MTIzfQ&limit=20
+```
+
+| 사용 사례 | 페이지네이션 타입 |
+|----------|----------------|
+| 관리자 패널, 소규모 데이터셋 | Offset |
+| 무한 스크롤, 대규모 데이터셋 | Cursor |
+
+## 버전 관리
+
+- `/api/v1/`으로 시작 — 필요하기 전까지 버전 관리하지 않습니다
+- 최대 2개의 활성 버전 유지 (현재 + 이전)
+- 깨지지 않는 변경은 새 버전이 필요 없습니다
+
+## API 설계 체크리스트
+
+- [ ] 리소스 URL이 명명 규칙을 따름
+- [ ] 올바른 HTTP 메서드 사용
+- [ ] 적절한 상태 코드 반환
+- [ ] 입력이 스키마로 검증됨
+- [ ] 페이지네이션 구현됨
+- [ ] 요율 제한 구성됨'),
+('코딩 표준 및 모범 사례', '가독성, KISS, DRY, YAGNI 원칙과 코드 품질 기준.', 'ETC', '# 코딩 표준 및 모범 사례
+
+## 핵심 원칙
+
+### 1. 가독성 우선
+명확한 변수와 함수 이름으로 자체 문서화되는 코드를 작성합니다.
+
+### 2. KISS 원칙
+작동하는 가장 간단한 솔루션을 찾습니다. 과도한 엔지니어링을 피합니다.
+
+### 3. DRY 접근 방식
+반복되는 로직을 함수로 추출하고 재사용 가능한 컴포넌트를 만듭니다.
+
+### 4. YAGNI 철학
+필요하기 전에 기능을 만들지 않습니다. 투기적 일반화를 피합니다.
+
+## 중요 표준
+
+### 불변성 (필수)
+스프레드 연산자를 사용하고 직접 변형을 절대 하지 않습니다.
+
+```typescript
+// 좋음
+const updatedUser = { ...user, name: ''새 이름'' }
+
+// 나쁨
+user.name = ''새 이름''
+```
+
+### 에러 처리
+포괄적인 try-catch 블록과 상태 확인이 필요합니다.
+
+### 타입 안전성
+`any` 타입 사용을 피하고 TypeScript의 타입 시스템을 완전히 활용합니다.
+
+## 코드 스멜
+
+다음 안티 패턴을 주의합니다:
+- 50줄 이상의 함수
+- 5단계 이상의 중첩 조건
+- 설명되지 않은 "매직 넘버"
+
+**코드 품질은 협상 대상이 아닙니다.**'),
+('보안 검토 가이드', '인증, 입력 검증, SQL 인젝션, XSS, CSRF, Rate Limiting 등 보안 체크리스트.', 'ETC', '# 보안 검토 가이드
+
+모든 코드가 보안 모범 사례를 따르도록 보장합니다.
+
+## 활성화 시점
+
+- 인증 또는 인가 구현 시
+- 사용자 입력 또는 파일 업로드 처리 시
+- 새 API 엔드포인트 생성 시
+- 시크릿 또는 자격 증명 작업 시
+
+## 1. 시크릿 관리
+
+```typescript
+// 절대 하지 마세요
+const apiKey = "sk-proj-xxxxx"
+
+// 항상 이렇게 하세요
+const apiKey = process.env.OPENAI_API_KEY
+if (!apiKey) throw new Error(''OPENAI_API_KEY가 설정되지 않았습니다'')
+```
+
+## 2. 입력 유효성 검사
+
+```typescript
+import { z } from ''zod''
+
+const CreateUserSchema = z.object({
+  email: z.string().email(),
+  name: z.string().min(1).max(100),
+})
+```
+
+## 3. SQL 인젝션 방지
+
+```typescript
+// 나쁨 - SQL 인젝션 취약점
+const query = `SELECT * FROM users WHERE email = ''${userEmail}''`
+
+// 좋음 - 매개변수화된 쿼리
+await db.query(''SELECT * FROM users WHERE email = $1'', [userEmail])
+```
+
+## 4. XSS 방지
+
+- 사용자 제공 HTML을 새니타이즈합니다
+- CSP 헤더를 구성합니다
+- React의 내장 XSS 보호를 사용합니다
+
+## 5. 요율 제한
+
+```typescript
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  message: ''너무 많은 요청''
+})
+```
+
+## 배포 전 보안 체크리스트
+
+- [ ] 하드코딩된 시크릿 없음
+- [ ] 모든 입력 검증됨
+- [ ] 모든 쿼리 매개변수화됨
+- [ ] HTTPS 필수
+- [ ] 보안 헤더 설정됨
+- [ ] 의존성 업데이트 및 취약점 없음
+
+**기억하세요**: 보안은 선택 사항이 아닙니다.'),
+('E2E 테스트 패턴', 'Playwright 기반 E2E 테스트, POM, CI/CD 연동, 불안정 테스트 대응 전략.', 'ETC', '# E2E 테스트 패턴
+
+안정적이고 빠르며 유지보수 가능한 E2E 테스트 스위트를 위한 Playwright 패턴입니다.
+
+## 테스트 파일 구성
+
+```
+tests/
+├── e2e/
+│   ├── auth/
+│   │   ├── login.spec.ts
+│   │   └── register.spec.ts
+│   └── features/
+│       ├── search.spec.ts
+│       └── create.spec.ts
+├── fixtures/
+│   └── auth.ts
+└── playwright.config.ts
+```
+
+## Page Object Model (POM)
+
+```typescript
+import { Page, Locator } from ''@playwright/test''
+
+export class ItemsPage {
+  readonly page: Page
+  readonly searchInput: Locator
+  readonly itemCards: Locator
+
+  constructor(page: Page) {
+    this.page = page
+    this.searchInput = page.locator(''[data-testid="search-input"]'')
+    this.itemCards = page.locator(''[data-testid="item-card"]'')
+  }
+
+  async goto() {
+    await this.page.goto(''/items'')
+    await this.page.waitForLoadState(''networkidle'')
+  }
+
+  async search(query: string) {
+    await this.searchInput.fill(query)
+    await this.page.waitForResponse(resp => resp.url().includes(''/api/search''))
+  }
+}
+```
+
+## Playwright 설정
+
+```typescript
+import { defineConfig, devices } from ''@playwright/test''
+
+export default defineConfig({
+  testDir: ''./tests/e2e'',
+  fullyParallel: true,
+  retries: process.env.CI ? 2 : 0,
+  use: {
+    baseURL: ''http://localhost:3000'',
+    trace: ''on-first-retry'',
+    screenshot: ''only-on-failure'',
+  },
+  projects: [
+    { name: ''chromium'', use: { ...devices[''Desktop Chrome''] } },
+    { name: ''firefox'', use: { ...devices[''Desktop Firefox''] } },
+  ],
+})
+```
+
+## 불안정 테스트 패턴
+
+### 일반적인 원인과 해결책
+
+**경쟁 조건:**
+```typescript
+// 나쁨: 요소가 준비됐다고 가정
+await page.click(''[data-testid="button"]'')
+
+// 좋음: 자동 대기 로케이터
+await page.locator(''[data-testid="button"]'').click()
+```
+
+**네트워크 타이밍:**
+```typescript
+// 나쁨: 임의의 타임아웃
+await page.waitForTimeout(5000)
+
+// 좋음: 특정 조건 대기
+await page.waitForResponse(resp => resp.url().includes(''/api/data''))
+```
+
+## CI/CD 통합
+
+```yaml
+name: E2E Tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npx playwright install --with-deps
+      - run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+```');
