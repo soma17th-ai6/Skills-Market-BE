@@ -39,3 +39,19 @@
   - ralph/prd.json (set US-003 passes to true)
 - Tests: 3 tests (ThreadPoolTaskExecutor bean validation, @Async immediate return, POST 202 + Awaitility status change) - all passing
 - Build: ./gradlew build SUCCESS
+
+## US-004: 요청 상태 조회 및 SSE 실시간 알림 엔드포인트
+- Status: DONE
+- Files created:
+  - src/main/java/com/skillsmarket/demo/dto/SkillGenerationStatusResponse.java (status 조회 응답 DTO)
+  - src/main/java/com/skillsmarket/demo/service/SseEmitterService.java (SseEmitter 등록/발행/제거 관리)
+  - src/test/java/com/skillsmarket/demo/service/SseEmitterServiceTest.java (6 unit tests)
+- Files modified:
+  - src/main/java/com/skillsmarket/demo/controller/SkillController.java (GET /skills/generate/{requestId} 상태 조회, GET /skills/generate/{requestId}/stream SSE, ExceptionHandler for 404)
+  - src/main/java/com/skillsmarket/demo/service/SkillGenerationService.java (getStatus 메서드 추가, 파이프라인 각 단계에서 SSE 이벤트 발행)
+  - src/test/java/com/skillsmarket/demo/controller/SkillGenerationControllerTest.java (4 new tests: 상태 조회 200, COMPLETED + finalSkillContent, 404, SSE stream)
+  - src/test/resources/application-test.yaml (sql.init.mode=never 추가)
+  - src/test/java/com/skillsmarket/demo/DemoApplicationTests.java (@ActiveProfiles("test") 추가)
+  - ralph/prd.json (set US-004 passes to true)
+- Tests: 10 new tests (4 controller + 6 SseEmitterService unit) - all passing
+- Build: ./gradlew build SUCCESS

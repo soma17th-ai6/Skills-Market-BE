@@ -1,7 +1,9 @@
 package com.skillsmarket.demo.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -15,6 +17,7 @@ import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -95,5 +98,46 @@ class SkillGenerationControllerTest {
         assertThat(saved.getUserPrompt()).isEqualTo("Docker 스킬 만들어줘");
         assertThat(saved.getStatus()).isEqualTo(GenerationStatus.PENDING);
         assertThat(saved.getCreatedAt()).isNotNull();
+    }
+
+    @Test
+    void 존재하는_요청_조회_시_200_및_status_필드_확인() throws Exception {
+        SkillGenerationRequest request = SkillGenerationRequest.create("테스트 스킬 요청");
+        SkillGenerationRequest saved = repository.save(request);
+
+        mockMvc.perform(get("/skills/generate/{requestId}", saved.getId()))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.requestId").value(saved.getId()))
+                .andExpect(jsonPath("$.status").value("PENDING"));
+    }
+
+    @Test
+    void COMPLETED_상태_요청_조회_시_finalSkillContent_포함_확인() throws Exception {
+        SkillGenerationRequest request = SkillGenerationRequest.create("완료된 스킬 요청");
+        request.updateStatus(GenerationStatus.COMPLETED);
+        ReflectionTestUtils.setField(request, "finalSkillContent", "# 최종 스킬 내용");
+        SkillGenerationRequest saved = repository.save(request);
+
+        mockMvc.perform(get("/skills/generate/{requestId}", saved.getId()))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.status").value("COMPLETED"))
+                .andExpect(jsonPath("$.finalSkillContent").value("# 최종 스킬 내용"));
+    }
+
+    @Test
+    void 존재하지_않는_id_조회_시_404_반환() throws Exception {
+        mockMvc.perform(get("/skills/generate/{requestId}", 999999L))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    void SSE_연결_시_200_및_text_event_stream_Content_Type_확인() throws Exception {
+        SkillGenerationRequest request = SkillGenerationRequest.create("SSE 테스트 요청");
+        SkillGenerationRequest saved = repository.save(request);
+
+        mockMvc.perform(get("/skills/generate/{requestId}/stream", saved.getId())
+                        .accept(MediaType.TEXT_EVENT_STREAM))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_EVENT_STREAM));
     }
 }

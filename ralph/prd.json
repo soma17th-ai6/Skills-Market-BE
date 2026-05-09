@@ -80,7 +80,7 @@
         "Typecheck passes"
       ],
       "priority": 4,
-      "passes": false,
+      "passes": true,
       "notes": "SSE로 프론트엔드에 실시간 상태 업데이트 전달. SseEmitter timeout은 5분으로 설정. SSE 테스트는 MockMvc의 asyncDispatch 지원 활용."
     },
     {
