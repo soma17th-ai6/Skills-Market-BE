@@ -75,7 +75,7 @@ class SkillGenerationPipelineTest {
         inOrder.verify(skillReviewAgentService).review(requestId);
         inOrder.verify(sseEmitterService).sendEvent(requestId, GenerationStatus.REFINING);
         inOrder.verify(skillCreatorAgentService).refine(requestId, reviewFeedback);
-        inOrder.verify(sseEmitterService).sendEvent(requestId, GenerationStatus.COMPLETED);
+        inOrder.verify(sseEmitterService).sendCompletedEvent(eq(requestId), eq(finalContent));
         inOrder.verify(sseEmitterService).completeEmitter(requestId);
 
         assertThat(request.getFinalSkillContent()).isEqualTo(finalContent);

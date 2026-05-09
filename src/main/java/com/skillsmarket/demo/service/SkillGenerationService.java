@@ -37,7 +37,6 @@ public class SkillGenerationService {
     }
 
     @Async("skillGenerationExecutor")
-    @Transactional
     public void runPipeline(Long requestId) {
         log.info("Starting skill generation pipeline for requestId={}", requestId);
 
@@ -59,7 +58,7 @@ public class SkillGenerationService {
 
             // Step 2: Generating (SkillCreatorAgentService)
             skillCreatorAgentService.generate(requestId);
-            // After generate(), status is REVIEWING and SSE event is sent
+            // After generate(), status is REVIEWING and S1SE event is sent
             request = skillGenerationRequestRepository.findById(requestId)
                     .orElseThrow(() -> new IllegalArgumentException("Request not found: " + requestId));
             log.info("Pipeline step REVIEWING for requestId={}", requestId);
@@ -83,7 +82,7 @@ public class SkillGenerationService {
             // Step 5: Completed
             request.updateStatus(GenerationStatus.COMPLETED);
             skillGenerationRequestRepository.save(request);
-            sseEmitterService.sendEvent(requestId, GenerationStatus.COMPLETED);
+            sseEmitterService.sendCompletedEvent(requestId, finalSkillContent);
             sseEmitterService.completeEmitter(requestId);
             log.info("Pipeline COMPLETED for requestId={}", requestId);
 

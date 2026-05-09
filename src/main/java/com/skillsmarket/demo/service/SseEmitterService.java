@@ -1,5 +1,6 @@
 package com.skillsmarket.demo.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.skillsmarket.demo.domain.GenerationStatus;
 import java.io.IOException;
 import java.util.Map;
@@ -42,11 +43,29 @@ public class SseEmitterService {
             return;
         }
         try {
-            emitter.send(SseEmitter.event()
-                    .name("status")
-                    .data(status.name()));
+            String json = "{\"requestId\":" + requestId + ",\"status\":\"" + status.name() + "\"}";
+            emitter.send(SseEmitter.event().data(json, org.springframework.http.MediaType.APPLICATION_JSON));
         } catch (IOException e) {
             log.warn("Failed to send SSE event for requestId={}", requestId, e);
+            emitters.remove(requestId);
+        }
+    }
+
+    public void sendCompletedEvent(Long requestId, String finalSkillContent) {
+        SseEmitter emitter = emitters.get(requestId);
+        if (emitter == null) {
+            return;
+        }
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            Map<String, Object> payload = Map.of(
+                    "requestId", requestId,
+                    "status", "COMPLETED",
+                    "finalSkillContent", finalSkillContent != null ? finalSkillContent : ""
+            );
+            emitter.send(SseEmitter.event().data(mapper.writeValueAsString(payload), org.springframework.http.MediaType.APPLICATION_JSON));
+        } catch (IOException e) {
+            log.warn("Failed to send COMPLETED SSE event for requestId={}", requestId, e);
             emitters.remove(requestId);
         }
     }
