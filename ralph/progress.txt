@@ -1,0 +1,12 @@
+# Ralph Progress - Skill Generation Pipeline
+# Started: 2026-05-09
+
+## US-001: 스킬 생성 요청 엔티티 및 상태 모델 추가
+- Status: DONE
+- Files created:
+  - src/main/java/com/skillsmarket/demo/domain/GenerationStatus.java
+  - src/main/java/com/skillsmarket/demo/domain/SkillGenerationRequest.java
+  - src/main/java/com/skillsmarket/demo/repository/SkillGenerationRequestRepository.java
+  - src/test/java/com/skillsmarket/demo/repository/SkillGenerationRequestRepositoryTest.java
+- Tests: 4 tests (모든 필드 persist, status 전환, null validation, blank validation) - all passing
+- Build: ./gradlew build SUCCESS
