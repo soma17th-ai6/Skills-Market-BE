@@ -20,6 +20,7 @@ public class SkillGenerationService {
     private final SseEmitterService sseEmitterService;
     private final DeepthinkService deepthinkService;
     private final SkillCreatorAgentService skillCreatorAgentService;
+    private final SkillReviewAgentService skillReviewAgentService;
 
     @Transactional
     public SkillGenerateResponse submitGenerationRequest(String userPrompt) {
@@ -63,11 +64,21 @@ public class SkillGenerationService {
                     .orElseThrow(() -> new IllegalArgumentException("Request not found: " + requestId));
             log.info("Pipeline step REVIEWING for requestId={}", requestId);
 
-            // Step 4: Refining
+            // Step 3: Reviewing (SkillReviewAgentService)
+            String reviewFeedback = skillReviewAgentService.review(requestId);
+            request = skillGenerationRequestRepository.findById(requestId)
+                    .orElseThrow(() -> new IllegalArgumentException("Request not found: " + requestId));
+            log.info("Pipeline step REVIEWING completed for requestId={}", requestId);
+
+            // Step 4: Refining (SkillCreatorAgentService.refine)
             request.updateStatus(GenerationStatus.REFINING);
             skillGenerationRequestRepository.save(request);
             sseEmitterService.sendEvent(requestId, GenerationStatus.REFINING);
             log.info("Pipeline step REFINING for requestId={}", requestId);
+
+            String finalSkillContent = skillCreatorAgentService.refine(requestId, reviewFeedback);
+            request.updateFinalSkillContent(finalSkillContent);
+            skillGenerationRequestRepository.save(request);
 
             // Step 5: Completed
             request.updateStatus(GenerationStatus.COMPLETED);

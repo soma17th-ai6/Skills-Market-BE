@@ -146,7 +146,7 @@
         "Typecheck passes"
       ],
       "priority": 7,
-      "passes": false,
+      "passes": true,
       "notes": "리뷰 → 수정 순서로 진행. 최종본이 finalSkillContent에 저장. 통합 테스트에서 전체 플로우를 end-to-end로 검증."
     },
     {

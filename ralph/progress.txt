@@ -84,3 +84,17 @@
   - ralph/prd.json (set US-006 passes to true)
 - Tests: 2 unit tests (generate 로직 검증 + refine 로직 검증) + 3 integration tests (@EnabledIfEnvironmentVariable, skipped without API key) - all passing
 - Build: ./gradlew build SUCCESS
+
+## US-007: Step 2b: 스킬 리뷰 에이전트 및 수정 파이프라인
+- Status: DONE
+- Files created:
+  - src/main/java/com/skillsmarket/demo/service/SkillReviewAgentService.java (ChatClient를 사용한 스킬 리뷰 서비스 - 품질/완성도/보안/사용성 관점 리뷰)
+  - src/test/java/com/skillsmarket/demo/service/SkillReviewAgentServiceTest.java (ChatClient mock 단위 테스트 - reviewFeedback 저장 확인)
+  - src/test/java/com/skillsmarket/demo/service/SkillReviewAgentServiceIntegrationTest.java (OpenAI 의존 통합 테스트, @EnabledIfEnvironmentVariable)
+  - src/test/java/com/skillsmarket/demo/service/SkillGenerationPipelineTest.java (파이프라인 단위 테스트 - 상태 전환 순서 검증, 예외 시 FAILED 전환)
+  - src/test/java/com/skillsmarket/demo/service/SkillGenerationPipelineIntegrationTest.java (전체 파이프라인 e2e 통합 테스트, @EnabledIfEnvironmentVariable)
+- Files modified:
+  - src/main/java/com/skillsmarket/demo/service/SkillGenerationService.java (SkillReviewAgentService 주입, REVIEWING/REFINING 스텁을 실제 review/refine 호출로 교체, finalSkillContent 저장)
+  - ralph/prd.json (set US-007 passes to true)
+- Tests: 1 review unit test + 1 integration test + 2 pipeline unit tests (상태 전환 순서, FAILED 전환) + 1 pipeline e2e integration test - all passing
+- Build: ./gradlew build SUCCESS
