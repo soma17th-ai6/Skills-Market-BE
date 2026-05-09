@@ -24,6 +24,7 @@ import org.springframework.test.web.servlet.MvcResult;
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
+@org.springframework.context.annotation.Import(com.skillsmarket.demo.config.TestChatClientConfig.class)
 class SkillGenerationControllerTest {
 
     @Autowired

@@ -28,6 +28,7 @@ import org.springframework.test.web.servlet.MvcResult;
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
+@org.springframework.context.annotation.Import(TestChatClientConfig.class)
 class AsyncConfigTest {
 
     @Autowired

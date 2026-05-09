@@ -18,6 +18,7 @@ public class SkillGenerationService {
 
     private final SkillGenerationRequestRepository skillGenerationRequestRepository;
     private final SseEmitterService sseEmitterService;
+    private final DeepthinkService deepthinkService;
 
     @Transactional
     public SkillGenerateResponse submitGenerationRequest(String userPrompt) {
@@ -42,16 +43,16 @@ public class SkillGenerationService {
                 .orElseThrow(() -> new IllegalArgumentException("Request not found: " + requestId));
 
         try {
-            // Step 1: Clarifying
+            // Step 1: Clarifying (Deepthink)
             request.updateStatus(GenerationStatus.CLARIFYING);
             skillGenerationRequestRepository.save(request);
             sseEmitterService.sendEvent(requestId, GenerationStatus.CLARIFYING);
             log.info("Pipeline step CLARIFYING for requestId={}", requestId);
 
-            // Step 2: Generating
-            request.updateStatus(GenerationStatus.GENERATING);
-            skillGenerationRequestRepository.save(request);
-            sseEmitterService.sendEvent(requestId, GenerationStatus.GENERATING);
+            deepthinkService.clarify(requestId);
+            // After clarify(), status is GENERATING and SSE event is sent
+            request = skillGenerationRequestRepository.findById(requestId)
+                    .orElseThrow(() -> new IllegalArgumentException("Request not found: " + requestId));
             log.info("Pipeline step GENERATING for requestId={}", requestId);
 
             // Step 3: Reviewing

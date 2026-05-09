@@ -57,6 +57,10 @@ public class SkillGenerationRequest {
         this.status = status;
     }
 
+    public void updateClarifiedRequirements(String clarifiedRequirements) {
+        this.clarifiedRequirements = clarifiedRequirements;
+    }
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();

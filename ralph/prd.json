@@ -101,7 +101,7 @@
         "Typecheck passes"
       ],
       "priority": 5,
-      "passes": false,
+      "passes": true,
       "notes": "OpenAI 의존 통합 테스트는 @EnabledIfEnvironmentVariable(named='OPENAI_API_KEY') 사용. 단위 테스트는 ChatClient를 @MockBean으로 mock하여 API 없이 실행 가능하게."
     },
     {
